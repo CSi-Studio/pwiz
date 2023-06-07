@@ -37,6 +37,7 @@
 #include "boost/iostreams/device/array.hpp"
 #include "pwiz/utility/misc/Std.hpp"
 #include "pwiz/data/msdata/MSNumpress.hpp"
+#include <iostream>
 
 namespace pwiz {
 namespace msdata {
@@ -136,7 +137,7 @@ void BinaryDataEncoder::Impl::encode(const double* data, size_t dataSize, std::s
     vector<T> data64endianized;
     double mzPrecision = config_.mzPrecision;
     double intPrecision = config_.intPrecision;
-    double truncData[dataSize];
+    double* truncData = new double[dataSize]; // 创建新数组 
     switch (config_.mzTruncationMode)
     {
         case Trunc_None:
@@ -144,13 +145,15 @@ void BinaryDataEncoder::Impl::encode(const double* data, size_t dataSize, std::s
         case Trunc_Absolute:
             for (int i = 0; i < dataSize; i++)
             {
-                truncData[i] = std::round(data[i] * intPrecision) / intPrecision; 
+                truncData[i] = std::round(data[i] * mzPrecision) / mzPrecision; 
             }
             break;
         case Trunc_Relative:
             break;
+        default:
+            break;
     }
-
+    
     switch (config_.intTruncationMode)
     {
         case Trunc_None:
@@ -162,6 +165,8 @@ void BinaryDataEncoder::Impl::encode(const double* data, size_t dataSize, std::s
             }
             break;
         case Trunc_Relative:
+            break;
+        default:
             break;
     }
     
