@@ -50,7 +50,8 @@ class PWIZ_API_DECL BinaryDataEncoder
     enum ByteOrder {ByteOrder_LittleEndian, ByteOrder_BigEndian};
     enum Compression {Compression_None, Compression_Zlib};
     enum Numpress {Numpress_None, Numpress_Linear, Numpress_Pic, Numpress_Slof}; // lossy numerical representations
-
+    enum TruncationMode {Trunc_None, Trunc_Absolute, Trunc_Relative};
+    
     /// encoding/decoding configuration 
     struct PWIZ_API_DECL Config
     {
@@ -58,11 +59,16 @@ class PWIZ_API_DECL BinaryDataEncoder
         ByteOrder byteOrder;
         Compression compression;  // zlib or none
         Numpress numpress; // lossy numerical compression
+        TruncationMode mzTruncationMode;
+        TruncationMode intTruncationMode;
+        double mzPrecision;
+        double intPrecision;
+        
         double numpressFixedPoint;  // for Numpress_* use, 0=derive best value
         double numpressLinearErrorTolerance;  // guarantee abs(1.0-(encoded/decoded)) <= this, 0=do not guarantee anything
         double numpressSlofErrorTolerance;  // guarantee abs(1.0-(encoded/decoded)) <= this, 0=do not guarantee anything
         double numpressLinearAbsMassAcc;  // absolute mass error for lossy linear compression in Th (e.g. use 1e-4 for 1ppm @ 100 Th)
-
+        
         std::map<cv::CVID, Precision> precisionOverrides;
         std::map<cv::CVID, Numpress> numpressOverrides; 
 
@@ -74,7 +80,9 @@ class PWIZ_API_DECL BinaryDataEncoder
             numpressFixedPoint(0.0),
             numpressLinearErrorTolerance(BinaryDataEncoder_default_numpressLinearErrorTolerance),
             numpressSlofErrorTolerance(BinaryDataEncoder_default_numpressSlofErrorTolerance),
-            numpressLinearAbsMassAcc(-1.0)
+            numpressLinearAbsMassAcc(-1.0),
+            mzTruncationMode(Trunc_None),
+            intTruncationMode(Trunc_None)
         {}
     };
 

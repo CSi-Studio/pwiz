@@ -19,7 +19,7 @@ REM # msvc.jam assumes it will find "ShowVer.exe" in %PATH%
 set PATH=%PWIZ_ROOT%\libraries;%PATH%
 
 REM # determine address-model (default 32)
-set ADDRESS_MODEL=32
+set ADDRESS_MODEL=64
 set ALL_ARGS= %*
 REM # remove pesky '=' character for subsequent string substitution
 for /f "usebackq tokens=*" %%a in ('%ALL_ARGS%') do set ALL_ARGS=%%~a

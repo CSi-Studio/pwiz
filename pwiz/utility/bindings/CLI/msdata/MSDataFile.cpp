@@ -97,6 +97,8 @@ void MSDataFile::write(MSData^ msd, System::String^ filename)
     config->precision = Precision::Precision_64;
     config->byteOrder = ByteOrder::ByteOrder_LittleEndian;
     config->compression = Compression::Compression_None;
+    config->mzTruncationMode = TruncationMode::Trunc_None;
+    config->intTruncationMode = TruncationMode::Trunc_None;
     write(msd, filename, config);
 }
 
@@ -131,6 +133,11 @@ static void translateConfig(MSDataFile::WriteConfig^ config, b::MSDataFile::Writ
     config2.binaryDataEncoderConfig.numpressLinearErrorTolerance = config->numpressLinearErrorTolerance;
     config2.binaryDataEncoderConfig.numpressLinearAbsMassAcc = config->numpressLinearAbsMassAcc;
     config2.binaryDataEncoderConfig.numpressSlofErrorTolerance = config->numpressSlofErrorTolerance;
+    config2.binaryDataEncoderConfig.mzTruncationMode = (b::BinaryDataEncoder::TruncationMode) config->mzTruncationMode;
+    config2.binaryDataEncoderConfig.intTruncationMode = (b::BinaryDataEncoder::TruncationMode) config->intTruncationMode;
+    config2.binaryDataEncoderConfig.mzPrecision = config->mzPrecision;
+    config2.binaryDataEncoderConfig.intPrecision = config->intPrecision;
+    
 }
 
 void MSDataFile::write(MSData^ msd,

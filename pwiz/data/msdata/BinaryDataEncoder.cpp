@@ -134,7 +134,37 @@ void BinaryDataEncoder::Impl::encode(const double* data, size_t dataSize, std::s
     vector<unsigned char> numpressed;
     vector<T32> data32;
     vector<T> data64endianized;
+    double mzPrecision = config_.mzPrecision;
+    double intPrecision = config_.intPrecision;
+    double truncData[dataSize];
+    switch (config_.mzTruncationMode)
+    {
+        case Trunc_None:
+            break;
+        case Trunc_Absolute:
+            for (int i = 0; i < dataSize; i++)
+            {
+                truncData[i] = std::round(data[i] * intPrecision) / intPrecision; 
+            }
+            break;
+        case Trunc_Relative:
+            break;
+    }
 
+    switch (config_.intTruncationMode)
+    {
+        case Trunc_None:
+            break;
+        case Trunc_Absolute:
+            for (int i = 0; i < dataSize; i++)
+            {
+                truncData[i] = std::round(data[i] * intPrecision) / intPrecision; 
+            }
+            break;
+        case Trunc_Relative:
+            break;
+    }
+    
     if (Numpress_None != config_.numpress) { // lossy numerical representation
         try {
             switch(config_.numpress)
@@ -739,6 +769,32 @@ void writeConfig(ostream& os, const BinaryDataEncoder::Config& config, CVID cvid
         default:
             throw runtime_error("[BinaryDataEncoder::writeConfig] Unknown binary numeric compression");
     }
+
+    // switch (config.mzTruncationMode)
+    // {
+    //     case BinaryDataEncoder::Trunc_None:
+    //         os << "mzTruncationMode-None";
+    //         break;
+    //     case BinaryDataEncoder::Trunc_Absolute:
+    //         os << "mzTruncationMode-Absolute";
+    //         break;
+    //     case BinaryDataEncoder::Trunc_Relative:
+    //         os << "mzTruncationMode-Relative";
+    //         break;
+    // }
+    //
+    // switch (config.intTruncationMode)
+    // {
+    // case BinaryDataEncoder::Trunc_None:
+    //     os << "intTruncationMode-None";
+    //     break;
+    // case BinaryDataEncoder::Trunc_Absolute:
+    //     os << "intTruncationMode-Absolute";
+    //     break;
+    // case BinaryDataEncoder::Trunc_Relative:
+    //     os << "intTruncationMode-Relative";
+    //     break;
+    // }
 
     pOverrideItr = config.precisionOverrides.find(cvid);
     if (pOverrideItr != config.precisionOverrides.end())
