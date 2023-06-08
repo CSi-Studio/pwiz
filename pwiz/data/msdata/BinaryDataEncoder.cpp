@@ -733,6 +733,24 @@ PWIZ_API_DECL const BinaryDataEncoder::Config& BinaryDataEncoder::getConfig() co
     return impl_->getConfig();
 }
 
+uint64_t relativeError(uint64_t val, double lossy_error)
+{
+    int bits_to_trunc = 52 + ilogb(lossy_error) + 1;
+    if(bits_to_trunc > 0){
+        uint64_t mask = (((uint64_t)1) << bits_to_trunc) - 1;
+        //This allows us to save an extra bit.
+        uint64_t mask2 = ((uint64_t)1) << (bits_to_trunc - 1);
+        if((val & mask) >= mask2){
+            val = val & (~mask);
+            val += (((uint64_t)1) << bits_to_trunc);
+        }
+        else {
+            val = val & (~mask);
+        }
+    }
+    return val;
+}
+    
 void writeConfig(ostream& os, const BinaryDataEncoder::Config& config, CVID cvid) 
 {
 

@@ -111,6 +111,8 @@ class PWIZ_API_DECL BinaryDataEncoder
         decode(encodedData.c_str(), encodedData.length(), result);
     }
 
+    void relativeError(double d, double relativeError);
+    
     private:
     class Impl;
     boost::shared_ptr<Impl> impl_;
