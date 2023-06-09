@@ -89,7 +89,7 @@ class PWIZ_API_DECL BinaryDataEncoder
     BinaryDataEncoder(const Config& config = Config());
 
     const Config& getConfig() const; // get the config actually used - may differ from input for numpress use
-
+    double relativeError(double val, double lossy_error) const;
     /// encode binary data as a text string
     void encode(const std::vector<double>& data, std::string& result, size_t* binaryByteCount = NULL) const;
     void encode(const std::vector<std::int64_t>& data, std::string& result, size_t* binaryByteCount = NULL) const;
@@ -110,8 +110,6 @@ class PWIZ_API_DECL BinaryDataEncoder
     {
         decode(encodedData.c_str(), encodedData.length(), result);
     }
-
-    void relativeError(double d, double relativeError);
     
     private:
     class Impl;

@@ -65,6 +65,7 @@ class BinaryDataEncoder::Impl
     void encode(const std::int64_t* data, size_t dataSize, std::string& result, size_t* binaryByteCount);
     void decode(const char *encodedData, size_t len, pwiz::util::BinaryData<double>& result);
     void decode(const char *encodedData, size_t len, pwiz::util::BinaryData<std::int64_t>& result);
+    double relativeError(double origin, double lossy_error);
     template <typename T, typename T32> void decode(const string& encodedData, pwiz::util::BinaryData<T>& result)
     {
         decode(encodedData.c_str(),encodedData.length(),result);
@@ -149,6 +150,10 @@ void BinaryDataEncoder::Impl::encode(const double* data, size_t dataSize, std::s
             }
             break;
         case Trunc_Relative:
+            for (int i = 0; i < dataSize; i++)
+            {
+                truncData[i] = relativeError(data[i], mzPrecision);
+            }
             break;
         default:
             break;
@@ -165,6 +170,11 @@ void BinaryDataEncoder::Impl::encode(const double* data, size_t dataSize, std::s
             }
             break;
         case Trunc_Relative:
+            for (int i = 0; i < dataSize; i++)
+            {
+                truncData[i] = relativeError(data[i], intPrecision);
+            }
+            
             break;
         default:
             break;
@@ -732,24 +742,6 @@ PWIZ_API_DECL const BinaryDataEncoder::Config& BinaryDataEncoder::getConfig() co
 {
     return impl_->getConfig();
 }
-
-uint64_t relativeError(uint64_t val, double lossy_error)
-{
-    int bits_to_trunc = 52 + ilogb(lossy_error) + 1;
-    if(bits_to_trunc > 0){
-        uint64_t mask = (((uint64_t)1) << bits_to_trunc) - 1;
-        //This allows us to save an extra bit.
-        uint64_t mask2 = ((uint64_t)1) << (bits_to_trunc - 1);
-        if((val & mask) >= mask2){
-            val = val & (~mask);
-            val += (((uint64_t)1) << bits_to_trunc);
-        }
-        else {
-            val = val & (~mask);
-        }
-    }
-    return val;
-}
     
 void writeConfig(ostream& os, const BinaryDataEncoder::Config& config, CVID cvid) 
 {
@@ -835,6 +827,25 @@ void writeConfig(ostream& os, const BinaryDataEncoder::Config& config, CVID cvid
     }
 }
 
+PWIZ_API_DECL double BinaryDataEncoder::Impl::relativeError(double origin, double lossy_error)
+{
+    uint64_t val;
+    memcpy(&val, &origin, sizeof(double)); 
+    int bits_to_trunc = 52 + ilogb(lossy_error) + 1;
+    if(bits_to_trunc > 0){
+        uint64_t mask = (((uint64_t)1) << bits_to_trunc) - 1;
+        //This allows us to save an extra bit.
+        uint64_t mask2 = ((uint64_t)1) << (bits_to_trunc - 1);
+        if((val & mask) >= mask2){
+            val = val & (~mask);
+            val += (((uint64_t)1) << bits_to_trunc);
+        }
+        else {
+            val = val & (~mask);
+        }
+    }
+    return reinterpret_cast<double&>(val);
+}
 
 PWIZ_API_DECL ostream& operator<<(ostream& os, const BinaryDataEncoder::Config& config)
 {
