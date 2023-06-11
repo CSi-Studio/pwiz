@@ -174,7 +174,6 @@ void BinaryDataEncoder::Impl::encode(const double* data, size_t dataSize, std::s
             {
                 truncData[i] = relativeError(data[i], intPrecision);
             }
-            
             break;
         default:
             break;

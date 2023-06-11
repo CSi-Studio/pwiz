@@ -214,6 +214,14 @@ namespace MSConvertGUI
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.OptionsGB = new System.Windows.Forms.GroupBox();
             this.OptionsTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.cbMzLossError = new System.Windows.Forms.ComboBox();
+            this.cbIntLossyError = new System.Windows.Forms.ComboBox();
+            this.cbIntTruncMode = new System.Windows.Forms.ComboBox();
+            this.cbMzTruncMode = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.FilterDGV)).BeginInit();
             this.FilterGB.SuspendLayout();
             this.SubsetPanel.SuspendLayout();
@@ -242,27 +250,30 @@ namespace MSConvertGUI
             // 
             this.FileBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.FileBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystem;
-            this.FileBox.Location = new System.Drawing.Point(43, 35);
+            this.FileBox.Location = new System.Drawing.Point(72, 54);
+            this.FileBox.Margin = new System.Windows.Forms.Padding(5);
             this.FileBox.Name = "FileBox";
-            this.FileBox.Size = new System.Drawing.Size(182, 20);
+            this.FileBox.Size = new System.Drawing.Size(301, 26);
             this.FileBox.TabIndex = 3;
             this.FileBox.TextChanged += new System.EventHandler(this.FileBox_TextChanged);
             // 
             // FileLabel
             // 
             this.FileLabel.AutoSize = true;
-            this.FileLabel.Location = new System.Drawing.Point(12, 38);
+            this.FileLabel.Location = new System.Drawing.Point(20, 58);
+            this.FileLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.FileLabel.Name = "FileLabel";
-            this.FileLabel.Size = new System.Drawing.Size(26, 13);
+            this.FileLabel.Size = new System.Drawing.Size(41, 20);
             this.FileLabel.TabIndex = 1;
             this.FileLabel.Text = "File:";
             // 
             // AddFileButton
             // 
             this.AddFileButton.Enabled = false;
-            this.AddFileButton.Location = new System.Drawing.Point(92, 61);
+            this.AddFileButton.Location = new System.Drawing.Point(153, 94);
+            this.AddFileButton.Margin = new System.Windows.Forms.Padding(5);
             this.AddFileButton.Name = "AddFileButton";
-            this.AddFileButton.Size = new System.Drawing.Size(42, 23);
+            this.AddFileButton.Size = new System.Drawing.Size(70, 35);
             this.AddFileButton.TabIndex = 5;
             this.AddFileButton.Text = "Add";
             this.AddFileButton.UseVisualStyleBackColor = true;
@@ -279,14 +290,15 @@ namespace MSConvertGUI
             this.FilterDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.FilterDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { this.OptionTab, this.ValueTab });
             this.FilterDGV.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.FilterDGV.Location = new System.Drawing.Point(3, 263);
-            this.FilterDGV.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
+            this.FilterDGV.Location = new System.Drawing.Point(5, 405);
+            this.FilterDGV.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.FilterDGV.MultiSelect = false;
             this.FilterDGV.Name = "FilterDGV";
             this.FilterDGV.RowHeadersVisible = false;
+            this.FilterDGV.RowHeadersWidth = 62;
             this.FilterDGV.RowTemplate.Height = 24;
             this.FilterDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.FilterDGV.Size = new System.Drawing.Size(543, 260);
+            this.FilterDGV.Size = new System.Drawing.Size(890, 400);
             this.FilterDGV.TabIndex = 12;
             // 
             // OptionTab
@@ -294,12 +306,14 @@ namespace MSConvertGUI
             this.OptionTab.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.OptionTab.FillWeight = 33F;
             this.OptionTab.HeaderText = "Filter";
+            this.OptionTab.MinimumWidth = 8;
             this.OptionTab.Name = "OptionTab";
             // 
             // ValueTab
             // 
             this.ValueTab.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.ValueTab.HeaderText = "Parameters";
+            this.ValueTab.MinimumWidth = 8;
             this.ValueTab.Name = "ValueTab";
             // 
             // FileListBox
@@ -307,19 +321,22 @@ namespace MSConvertGUI
             this.FileListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
             this.FileListBox.FormattingEnabled = true;
             this.FileListBox.HorizontalScrollbar = true;
-            this.FileListBox.Location = new System.Drawing.Point(0, 3);
+            this.FileListBox.ItemHeight = 20;
+            this.FileListBox.Location = new System.Drawing.Point(0, 5);
+            this.FileListBox.Margin = new System.Windows.Forms.Padding(5);
             this.FileListBox.Name = "FileListBox";
             this.FileListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.FileListBox.Size = new System.Drawing.Size(309, 186);
+            this.FileListBox.Size = new System.Drawing.Size(499, 284);
             this.FileListBox.TabIndex = 7;
             this.FileListBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FileListBox_KeyUp);
             // 
             // RemoveFileButton
             // 
             this.RemoveFileButton.Enabled = false;
-            this.RemoveFileButton.Location = new System.Drawing.Point(140, 61);
+            this.RemoveFileButton.Location = new System.Drawing.Point(233, 94);
+            this.RemoveFileButton.Margin = new System.Windows.Forms.Padding(5);
             this.RemoveFileButton.Name = "RemoveFileButton";
-            this.RemoveFileButton.Size = new System.Drawing.Size(58, 23);
+            this.RemoveFileButton.Size = new System.Drawing.Size(97, 35);
             this.RemoveFileButton.TabIndex = 6;
             this.RemoveFileButton.Text = "Remove";
             this.RemoveFileButton.UseVisualStyleBackColor = true;
@@ -328,9 +345,10 @@ namespace MSConvertGUI
             // StartButton
             // 
             this.StartButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.StartButton.Location = new System.Drawing.Point(797, 619);
+            this.StartButton.Location = new System.Drawing.Point(1328, 952);
+            this.StartButton.Margin = new System.Windows.Forms.Padding(5);
             this.StartButton.Name = "StartButton";
-            this.StartButton.Size = new System.Drawing.Size(75, 23);
+            this.StartButton.Size = new System.Drawing.Size(125, 35);
             this.StartButton.TabIndex = 13;
             this.StartButton.Text = "Start";
             this.StartButton.UseVisualStyleBackColor = true;
@@ -350,10 +368,11 @@ namespace MSConvertGUI
             this.FilterGB.Controls.Add(this.DemultiplexPanel);
             this.FilterGB.Controls.Add(this.PeakPickingPanel);
             this.FilterGB.Controls.Add(this.ZeroSamplesPanel);
-            this.FilterGB.Location = new System.Drawing.Point(3, 0);
-            this.FilterGB.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            this.FilterGB.Location = new System.Drawing.Point(5, 0);
+            this.FilterGB.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
             this.FilterGB.Name = "FilterGB";
-            this.FilterGB.Size = new System.Drawing.Size(543, 228);
+            this.FilterGB.Padding = new System.Windows.Forms.Padding(5);
+            this.FilterGB.Size = new System.Drawing.Size(890, 351);
             this.FilterGB.TabIndex = 9;
             this.FilterGB.TabStop = false;
             this.FilterGB.Text = "Filters";
@@ -400,9 +419,10 @@ namespace MSConvertGUI
             this.SubsetPanel.Controls.Add(this.ScanNumberLabel);
             this.SubsetPanel.Controls.Add(this.ScanNumberLow);
             this.SubsetPanel.Controls.Add(this.ScanNumberLabel2);
-            this.SubsetPanel.Location = new System.Drawing.Point(22, 46);
+            this.SubsetPanel.Location = new System.Drawing.Point(37, 71);
+            this.SubsetPanel.Margin = new System.Windows.Forms.Padding(5);
             this.SubsetPanel.Name = "SubsetPanel";
-            this.SubsetPanel.Size = new System.Drawing.Size(500, 145);
+            this.SubsetPanel.Size = new System.Drawing.Size(818, 223);
             this.SubsetPanel.TabIndex = 6;
             this.SubsetPanel.Visible = false;
             // 
@@ -412,11 +432,13 @@ namespace MSConvertGUI
             this.toolStrip1.CanOverflow = false;
             this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.CollisionEnergyExtraOptions });
-            this.toolStrip1.Location = new System.Drawing.Point(468, 55);
+            this.toolStrip1.Location = new System.Drawing.Point(780, 85);
             this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.toolStrip1.Size = new System.Drawing.Size(32, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(53, 38);
             this.toolStrip1.TabIndex = 38;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -427,7 +449,7 @@ namespace MSConvertGUI
             this.CollisionEnergyExtraOptions.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.CollisionEnergyExtraOptions.Name = "CollisionEnergyExtraOptions";
             this.CollisionEnergyExtraOptions.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
-            this.CollisionEnergyExtraOptions.Size = new System.Drawing.Size(30, 22);
+            this.CollisionEnergyExtraOptions.Size = new System.Drawing.Size(35, 35);
             this.CollisionEnergyExtraOptions.Text = "...";
             this.CollisionEnergyExtraOptions.ToolTipText = "Additional options for collision energy filtering.";
             // 
@@ -437,7 +459,7 @@ namespace MSConvertGUI
             this.CollisionEnergyAcceptNonCIDMSnSpectra.CheckOnClick = true;
             this.CollisionEnergyAcceptNonCIDMSnSpectra.CheckState = System.Windows.Forms.CheckState.Checked;
             this.CollisionEnergyAcceptNonCIDMSnSpectra.Name = "CollisionEnergyAcceptNonCIDMSnSpectra";
-            this.CollisionEnergyAcceptNonCIDMSnSpectra.Size = new System.Drawing.Size(281, 22);
+            this.CollisionEnergyAcceptNonCIDMSnSpectra.Size = new System.Drawing.Size(384, 28);
             this.CollisionEnergyAcceptNonCIDMSnSpectra.Text = "Accept non-CID MSn spectra";
             this.CollisionEnergyAcceptNonCIDMSnSpectra.ToolTipText = "If checked, non-CID MSn spectra (e.g. ETD, CI, PTD) will be kept by the collision" + " energy filter.";
             // 
@@ -445,40 +467,44 @@ namespace MSConvertGUI
             // 
             this.CollisionEnergyAcceptCIDSpectraWithMissingCE.CheckOnClick = true;
             this.CollisionEnergyAcceptCIDSpectraWithMissingCE.Name = "CollisionEnergyAcceptCIDSpectraWithMissingCE";
-            this.CollisionEnergyAcceptCIDSpectraWithMissingCE.Size = new System.Drawing.Size(281, 22);
+            this.CollisionEnergyAcceptCIDSpectraWithMissingCE.Size = new System.Drawing.Size(384, 28);
             this.CollisionEnergyAcceptCIDSpectraWithMissingCE.Text = "Accept CID spectra with missing CE";
             this.CollisionEnergyAcceptCIDSpectraWithMissingCE.ToolTipText = "If checked, CID MSn spectra that are missing their CE will be kept.";
             // 
             // CollisionEnergyHigh
             // 
-            this.CollisionEnergyHigh.Location = new System.Drawing.Point(428, 58);
+            this.CollisionEnergyHigh.Location = new System.Drawing.Point(713, 89);
+            this.CollisionEnergyHigh.Margin = new System.Windows.Forms.Padding(8);
             this.CollisionEnergyHigh.Name = "CollisionEnergyHigh";
-            this.CollisionEnergyHigh.Size = new System.Drawing.Size(37, 20);
+            this.CollisionEnergyHigh.Size = new System.Drawing.Size(59, 26);
             this.CollisionEnergyHigh.TabIndex = 35;
             // 
             // CollisionEnergyLabel
             // 
             this.CollisionEnergyLabel.AutoSize = true;
-            this.CollisionEnergyLabel.Location = new System.Drawing.Point(283, 60);
+            this.CollisionEnergyLabel.Location = new System.Drawing.Point(472, 92);
+            this.CollisionEnergyLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.CollisionEnergyLabel.Name = "CollisionEnergyLabel";
-            this.CollisionEnergyLabel.Size = new System.Drawing.Size(83, 13);
+            this.CollisionEnergyLabel.Size = new System.Drawing.Size(133, 20);
             this.CollisionEnergyLabel.TabIndex = 37;
             this.CollisionEnergyLabel.Text = "Collision energy:";
             // 
             // CollisionEnergyLow
             // 
-            this.CollisionEnergyLow.Location = new System.Drawing.Point(372, 58);
+            this.CollisionEnergyLow.Location = new System.Drawing.Point(620, 89);
+            this.CollisionEnergyLow.Margin = new System.Windows.Forms.Padding(8);
             this.CollisionEnergyLow.Name = "CollisionEnergyLow";
-            this.CollisionEnergyLow.Size = new System.Drawing.Size(37, 20);
+            this.CollisionEnergyLow.Size = new System.Drawing.Size(59, 26);
             this.CollisionEnergyLow.TabIndex = 34;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.label12.Location = new System.Drawing.Point(411, 56);
+            this.label12.Location = new System.Drawing.Point(685, 86);
+            this.label12.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(15, 20);
+            this.label12.Size = new System.Drawing.Size(22, 29);
             this.label12.TabIndex = 36;
             this.label12.Text = "-";
             // 
@@ -487,19 +513,21 @@ namespace MSConvertGUI
             this.PolarityBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.PolarityBox.FormattingEnabled = true;
             this.PolarityBox.Items.AddRange(new object[] { "Any", "Negative", "Positive" });
-            this.PolarityBox.Location = new System.Drawing.Point(135, 112);
+            this.PolarityBox.Location = new System.Drawing.Point(225, 172);
+            this.PolarityBox.Margin = new System.Windows.Forms.Padding(5);
             this.PolarityBox.MaxDropDownItems = 16;
             this.PolarityBox.Name = "PolarityBox";
-            this.PolarityBox.Size = new System.Drawing.Size(93, 21);
+            this.PolarityBox.Size = new System.Drawing.Size(152, 28);
             this.PolarityBox.Sorted = true;
             this.PolarityBox.TabIndex = 32;
             // 
             // PolarityLabel
             // 
             this.PolarityLabel.AutoSize = true;
-            this.PolarityLabel.Location = new System.Drawing.Point(56, 116);
+            this.PolarityLabel.Location = new System.Drawing.Point(93, 178);
+            this.PolarityLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.PolarityLabel.Name = "PolarityLabel";
-            this.PolarityLabel.Size = new System.Drawing.Size(71, 13);
+            this.PolarityLabel.Size = new System.Drawing.Size(111, 20);
             this.PolarityLabel.TabIndex = 33;
             this.PolarityLabel.Text = "Scan polarity:";
             // 
@@ -508,28 +536,31 @@ namespace MSConvertGUI
             this.AnalyzerTypeBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.AnalyzerTypeBox.FormattingEnabled = true;
             this.AnalyzerTypeBox.Items.AddRange(new object[] { "Any", "FT", "IT", "orbi", "quad", "TOF" });
-            this.AnalyzerTypeBox.Location = new System.Drawing.Point(372, 112);
+            this.AnalyzerTypeBox.Location = new System.Drawing.Point(620, 172);
+            this.AnalyzerTypeBox.Margin = new System.Windows.Forms.Padding(5);
             this.AnalyzerTypeBox.MaxDropDownItems = 16;
             this.AnalyzerTypeBox.Name = "AnalyzerTypeBox";
-            this.AnalyzerTypeBox.Size = new System.Drawing.Size(93, 21);
+            this.AnalyzerTypeBox.Size = new System.Drawing.Size(152, 28);
             this.AnalyzerTypeBox.Sorted = true;
             this.AnalyzerTypeBox.TabIndex = 30;
             // 
             // AnalyzerTypeLabel
             // 
             this.AnalyzerTypeLabel.AutoSize = true;
-            this.AnalyzerTypeLabel.Location = new System.Drawing.Point(293, 116);
+            this.AnalyzerTypeLabel.Location = new System.Drawing.Point(488, 178);
+            this.AnalyzerTypeLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.AnalyzerTypeLabel.Name = "AnalyzerTypeLabel";
-            this.AnalyzerTypeLabel.Size = new System.Drawing.Size(73, 13);
+            this.AnalyzerTypeLabel.Size = new System.Drawing.Size(115, 20);
             this.AnalyzerTypeLabel.TabIndex = 31;
             this.AnalyzerTypeLabel.Text = "Analyzer type:";
             // 
             // MSLevelsLabel
             // 
             this.MSLevelsLabel.AutoSize = true;
-            this.MSLevelsLabel.Location = new System.Drawing.Point(73, 10);
+            this.MSLevelsLabel.Location = new System.Drawing.Point(122, 15);
+            this.MSLevelsLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.MSLevelsLabel.Name = "MSLevelsLabel";
-            this.MSLevelsLabel.Size = new System.Drawing.Size(56, 13);
+            this.MSLevelsLabel.Size = new System.Drawing.Size(87, 20);
             this.MSLevelsLabel.TabIndex = 29;
             this.MSLevelsLabel.Text = "MS levels:";
             // 
@@ -538,10 +569,11 @@ namespace MSConvertGUI
             this.ActivationTypeBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ActivationTypeBox.FormattingEnabled = true;
             this.ActivationTypeBox.Items.AddRange(new object[] { "Any", "BIRD", "CID", "ECD", "ETD", "ETD+SA", "HCD", "IRMPD", "PD", "PQD", "PSD", "SID", "SORI" });
-            this.ActivationTypeBox.Location = new System.Drawing.Point(372, 85);
+            this.ActivationTypeBox.Location = new System.Drawing.Point(620, 131);
+            this.ActivationTypeBox.Margin = new System.Windows.Forms.Padding(5);
             this.ActivationTypeBox.MaxDropDownItems = 16;
             this.ActivationTypeBox.Name = "ActivationTypeBox";
-            this.ActivationTypeBox.Size = new System.Drawing.Size(93, 21);
+            this.ActivationTypeBox.Size = new System.Drawing.Size(152, 28);
             this.ActivationTypeBox.Sorted = true;
             this.ActivationTypeBox.TabIndex = 14;
             // 
@@ -549,100 +581,112 @@ namespace MSConvertGUI
             // 
             this.MSLabelSeperator.AutoSize = true;
             this.MSLabelSeperator.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.MSLabelSeperator.Location = new System.Drawing.Point(174, 5);
+            this.MSLabelSeperator.Location = new System.Drawing.Point(290, 8);
+            this.MSLabelSeperator.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.MSLabelSeperator.Name = "MSLabelSeperator";
-            this.MSLabelSeperator.Size = new System.Drawing.Size(15, 20);
+            this.MSLabelSeperator.Size = new System.Drawing.Size(22, 29);
             this.MSLabelSeperator.TabIndex = 2;
             this.MSLabelSeperator.Text = "-";
             // 
             // DefaultArrayLengthHigh
             // 
-            this.DefaultArrayLengthHigh.Location = new System.Drawing.Point(428, 33);
+            this.DefaultArrayLengthHigh.Location = new System.Drawing.Point(713, 51);
+            this.DefaultArrayLengthHigh.Margin = new System.Windows.Forms.Padding(8);
             this.DefaultArrayLengthHigh.Name = "DefaultArrayLengthHigh";
-            this.DefaultArrayLengthHigh.Size = new System.Drawing.Size(37, 20);
+            this.DefaultArrayLengthHigh.Size = new System.Drawing.Size(59, 26);
             this.DefaultArrayLengthHigh.TabIndex = 26;
             // 
             // MSLevelHigh
             // 
-            this.MSLevelHigh.Location = new System.Drawing.Point(191, 7);
+            this.MSLevelHigh.Location = new System.Drawing.Point(318, 11);
+            this.MSLevelHigh.Margin = new System.Windows.Forms.Padding(8);
             this.MSLevelHigh.Name = "MSLevelHigh";
-            this.MSLevelHigh.Size = new System.Drawing.Size(37, 20);
+            this.MSLevelHigh.Size = new System.Drawing.Size(59, 26);
             this.MSLevelHigh.TabIndex = 1;
             this.MSLevelHigh.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumTextBox_KeyPress);
             // 
             // MSLevelLow
             // 
-            this.MSLevelLow.Location = new System.Drawing.Point(135, 7);
+            this.MSLevelLow.Location = new System.Drawing.Point(225, 11);
+            this.MSLevelLow.Margin = new System.Windows.Forms.Padding(8);
             this.MSLevelLow.Name = "MSLevelLow";
-            this.MSLevelLow.Size = new System.Drawing.Size(37, 20);
+            this.MSLevelLow.Size = new System.Drawing.Size(59, 26);
             this.MSLevelLow.TabIndex = 0;
             this.MSLevelLow.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumTextBox_KeyPress);
             // 
             // ActivationTypeLabel
             // 
             this.ActivationTypeLabel.AutoSize = true;
-            this.ActivationTypeLabel.Location = new System.Drawing.Point(286, 89);
+            this.ActivationTypeLabel.Location = new System.Drawing.Point(477, 137);
+            this.ActivationTypeLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.ActivationTypeLabel.Name = "ActivationTypeLabel";
-            this.ActivationTypeLabel.Size = new System.Drawing.Size(80, 13);
+            this.ActivationTypeLabel.Size = new System.Drawing.Size(123, 20);
             this.ActivationTypeLabel.TabIndex = 15;
             this.ActivationTypeLabel.Text = "Activation type:";
             // 
             // DefaultArrayLengthLabel
             // 
             this.DefaultArrayLengthLabel.AutoSize = true;
-            this.DefaultArrayLengthLabel.Location = new System.Drawing.Point(252, 36);
+            this.DefaultArrayLengthLabel.Location = new System.Drawing.Point(420, 55);
+            this.DefaultArrayLengthLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.DefaultArrayLengthLabel.Name = "DefaultArrayLengthLabel";
-            this.DefaultArrayLengthLabel.Size = new System.Drawing.Size(114, 13);
+            this.DefaultArrayLengthLabel.Size = new System.Drawing.Size(179, 20);
             this.DefaultArrayLengthLabel.TabIndex = 28;
             this.DefaultArrayLengthLabel.Text = "Number of data points:";
             // 
             // DefaultArrayLengthLow
             // 
-            this.DefaultArrayLengthLow.Location = new System.Drawing.Point(372, 33);
+            this.DefaultArrayLengthLow.Location = new System.Drawing.Point(620, 51);
+            this.DefaultArrayLengthLow.Margin = new System.Windows.Forms.Padding(8);
             this.DefaultArrayLengthLow.Name = "DefaultArrayLengthLow";
-            this.DefaultArrayLengthLow.Size = new System.Drawing.Size(37, 20);
+            this.DefaultArrayLengthLow.Size = new System.Drawing.Size(59, 26);
             this.DefaultArrayLengthLow.TabIndex = 25;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.label13.Location = new System.Drawing.Point(411, 31);
+            this.label13.Location = new System.Drawing.Point(685, 48);
+            this.label13.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(15, 20);
+            this.label13.Size = new System.Drawing.Size(22, 29);
             this.label13.TabIndex = 27;
             this.label13.Text = "-";
             // 
             // ChargeStatesHigh
             // 
-            this.ChargeStatesHigh.Location = new System.Drawing.Point(428, 8);
+            this.ChargeStatesHigh.Location = new System.Drawing.Point(713, 12);
+            this.ChargeStatesHigh.Margin = new System.Windows.Forms.Padding(8);
             this.ChargeStatesHigh.Name = "ChargeStatesHigh";
-            this.ChargeStatesHigh.Size = new System.Drawing.Size(37, 20);
+            this.ChargeStatesHigh.Size = new System.Drawing.Size(59, 26);
             this.ChargeStatesHigh.TabIndex = 22;
             // 
             // ChargeStatesLabel
             // 
             this.ChargeStatesLabel.AutoSize = true;
-            this.ChargeStatesLabel.Location = new System.Drawing.Point(291, 10);
+            this.ChargeStatesLabel.Location = new System.Drawing.Point(485, 15);
+            this.ChargeStatesLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.ChargeStatesLabel.Name = "ChargeStatesLabel";
-            this.ChargeStatesLabel.Size = new System.Drawing.Size(75, 13);
+            this.ChargeStatesLabel.Size = new System.Drawing.Size(119, 20);
             this.ChargeStatesLabel.TabIndex = 24;
             this.ChargeStatesLabel.Text = "Charge states:";
             // 
             // ChargeStatesLow
             // 
-            this.ChargeStatesLow.Location = new System.Drawing.Point(372, 8);
+            this.ChargeStatesLow.Location = new System.Drawing.Point(620, 12);
+            this.ChargeStatesLow.Margin = new System.Windows.Forms.Padding(8);
             this.ChargeStatesLow.Name = "ChargeStatesLow";
-            this.ChargeStatesLow.Size = new System.Drawing.Size(37, 20);
+            this.ChargeStatesLow.Size = new System.Drawing.Size(59, 26);
             this.ChargeStatesLow.TabIndex = 21;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.label11.Location = new System.Drawing.Point(411, 6);
+            this.label11.Location = new System.Drawing.Point(685, 9);
+            this.label11.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(15, 20);
+            this.label11.Size = new System.Drawing.Size(22, 29);
             this.label11.TabIndex = 23;
             this.label11.Text = "-";
             // 
@@ -650,32 +694,36 @@ namespace MSConvertGUI
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(174, 84);
+            this.label2.Location = new System.Drawing.Point(290, 129);
+            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(15, 20);
+            this.label2.Size = new System.Drawing.Size(22, 29);
             this.label2.TabIndex = 20;
             this.label2.Text = "-";
             // 
             // ScanEventHigh
             // 
-            this.ScanEventHigh.Location = new System.Drawing.Point(191, 86);
+            this.ScanEventHigh.Location = new System.Drawing.Point(318, 132);
+            this.ScanEventHigh.Margin = new System.Windows.Forms.Padding(8);
             this.ScanEventHigh.Name = "ScanEventHigh";
-            this.ScanEventHigh.Size = new System.Drawing.Size(37, 20);
+            this.ScanEventHigh.Size = new System.Drawing.Size(59, 26);
             this.ScanEventHigh.TabIndex = 19;
             // 
             // ScanEventLow
             // 
-            this.ScanEventLow.Location = new System.Drawing.Point(135, 86);
+            this.ScanEventLow.Location = new System.Drawing.Point(225, 132);
+            this.ScanEventLow.Margin = new System.Windows.Forms.Padding(8);
             this.ScanEventLow.Name = "ScanEventLow";
-            this.ScanEventLow.Size = new System.Drawing.Size(37, 20);
+            this.ScanEventLow.Size = new System.Drawing.Size(59, 26);
             this.ScanEventLow.TabIndex = 18;
             // 
             // ScanEventLabel
             // 
             this.ScanEventLabel.AutoSize = true;
-            this.ScanEventLabel.Location = new System.Drawing.Point(64, 91);
+            this.ScanEventLabel.Location = new System.Drawing.Point(107, 140);
+            this.ScanEventLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.ScanEventLabel.Name = "ScanEventLabel";
-            this.ScanEventLabel.Size = new System.Drawing.Size(65, 13);
+            this.ScanEventLabel.Size = new System.Drawing.Size(97, 20);
             this.ScanEventLabel.TabIndex = 17;
             this.ScanEventLabel.Text = "Scan event:";
             // 
@@ -683,98 +731,110 @@ namespace MSConvertGUI
             // 
             this.mzWinLabel2.AutoSize = true;
             this.mzWinLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.mzWinLabel2.Location = new System.Drawing.Point(174, 84);
+            this.mzWinLabel2.Location = new System.Drawing.Point(290, 129);
+            this.mzWinLabel2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.mzWinLabel2.Name = "mzWinLabel2";
-            this.mzWinLabel2.Size = new System.Drawing.Size(15, 20);
+            this.mzWinLabel2.Size = new System.Drawing.Size(22, 29);
             this.mzWinLabel2.TabIndex = 16;
             this.mzWinLabel2.Text = "-";
             // 
             // ScanNumberHigh
             // 
-            this.ScanNumberHigh.Location = new System.Drawing.Point(191, 34);
+            this.ScanNumberHigh.Location = new System.Drawing.Point(318, 52);
+            this.ScanNumberHigh.Margin = new System.Windows.Forms.Padding(8);
             this.ScanNumberHigh.Name = "ScanNumberHigh";
-            this.ScanNumberHigh.Size = new System.Drawing.Size(37, 20);
+            this.ScanNumberHigh.Size = new System.Drawing.Size(59, 26);
             this.ScanNumberHigh.TabIndex = 11;
             // 
             // ScanTimeLow
             // 
-            this.ScanTimeLow.Location = new System.Drawing.Point(135, 60);
+            this.ScanTimeLow.Location = new System.Drawing.Point(225, 92);
+            this.ScanTimeLow.Margin = new System.Windows.Forms.Padding(8);
             this.ScanTimeLow.Name = "ScanTimeLow";
-            this.ScanTimeLow.Size = new System.Drawing.Size(37, 20);
+            this.ScanTimeLow.Size = new System.Drawing.Size(59, 26);
             this.ScanTimeLow.TabIndex = 0;
             // 
             // mzWinHigh
             // 
-            this.mzWinHigh.Location = new System.Drawing.Point(191, 86);
+            this.mzWinHigh.Location = new System.Drawing.Point(318, 132);
+            this.mzWinHigh.Margin = new System.Windows.Forms.Padding(8);
             this.mzWinHigh.Name = "mzWinHigh";
-            this.mzWinHigh.Size = new System.Drawing.Size(37, 20);
+            this.mzWinHigh.Size = new System.Drawing.Size(59, 26);
             this.mzWinHigh.TabIndex = 15;
             // 
             // ScanTimeHigh
             // 
-            this.ScanTimeHigh.Location = new System.Drawing.Point(191, 60);
+            this.ScanTimeHigh.Location = new System.Drawing.Point(318, 92);
+            this.ScanTimeHigh.Margin = new System.Windows.Forms.Padding(8);
             this.ScanTimeHigh.Name = "ScanTimeHigh";
-            this.ScanTimeHigh.Size = new System.Drawing.Size(37, 20);
+            this.ScanTimeHigh.Size = new System.Drawing.Size(59, 26);
             this.ScanTimeHigh.TabIndex = 1;
             // 
             // ScanTimeLabel2
             // 
             this.ScanTimeLabel2.AutoSize = true;
             this.ScanTimeLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.ScanTimeLabel2.Location = new System.Drawing.Point(174, 58);
+            this.ScanTimeLabel2.Location = new System.Drawing.Point(290, 89);
+            this.ScanTimeLabel2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.ScanTimeLabel2.Name = "ScanTimeLabel2";
-            this.ScanTimeLabel2.Size = new System.Drawing.Size(15, 20);
+            this.ScanTimeLabel2.Size = new System.Drawing.Size(22, 29);
             this.ScanTimeLabel2.TabIndex = 2;
             this.ScanTimeLabel2.Text = "-";
             // 
             // mzWinLow
             // 
-            this.mzWinLow.Location = new System.Drawing.Point(135, 86);
+            this.mzWinLow.Location = new System.Drawing.Point(225, 132);
+            this.mzWinLow.Margin = new System.Windows.Forms.Padding(8);
             this.mzWinLow.Name = "mzWinLow";
-            this.mzWinLow.Size = new System.Drawing.Size(37, 20);
+            this.mzWinLow.Size = new System.Drawing.Size(59, 26);
             this.mzWinLow.TabIndex = 14;
             // 
             // ScanTimeLabel
             // 
             this.ScanTimeLabel.AutoSize = true;
-            this.ScanTimeLabel.Location = new System.Drawing.Point(21, 63);
+            this.ScanTimeLabel.Location = new System.Drawing.Point(35, 97);
+            this.ScanTimeLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.ScanTimeLabel.Name = "ScanTimeLabel";
-            this.ScanTimeLabel.Size = new System.Drawing.Size(106, 13);
+            this.ScanTimeLabel.Size = new System.Drawing.Size(169, 20);
             this.ScanTimeLabel.TabIndex = 3;
             this.ScanTimeLabel.Text = "Scan time (seconds):";
             // 
             // mzWinLabel
             // 
             this.mzWinLabel.AutoSize = true;
-            this.mzWinLabel.Location = new System.Drawing.Point(64, 91);
+            this.mzWinLabel.Location = new System.Drawing.Point(107, 140);
+            this.mzWinLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.mzWinLabel.Name = "mzWinLabel";
-            this.mzWinLabel.Size = new System.Drawing.Size(65, 13);
+            this.mzWinLabel.Size = new System.Drawing.Size(101, 20);
             this.mzWinLabel.TabIndex = 6;
             this.mzWinLabel.Text = "mz Window:";
             // 
             // ScanNumberLabel
             // 
             this.ScanNumberLabel.AutoSize = true;
-            this.ScanNumberLabel.Location = new System.Drawing.Point(54, 36);
+            this.ScanNumberLabel.Location = new System.Drawing.Point(90, 55);
+            this.ScanNumberLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.ScanNumberLabel.Name = "ScanNumberLabel";
-            this.ScanNumberLabel.Size = new System.Drawing.Size(73, 13);
+            this.ScanNumberLabel.Size = new System.Drawing.Size(113, 20);
             this.ScanNumberLabel.TabIndex = 13;
             this.ScanNumberLabel.Text = "Scan number:";
             // 
             // ScanNumberLow
             // 
-            this.ScanNumberLow.Location = new System.Drawing.Point(135, 34);
+            this.ScanNumberLow.Location = new System.Drawing.Point(225, 52);
+            this.ScanNumberLow.Margin = new System.Windows.Forms.Padding(8);
             this.ScanNumberLow.Name = "ScanNumberLow";
-            this.ScanNumberLow.Size = new System.Drawing.Size(37, 20);
+            this.ScanNumberLow.Size = new System.Drawing.Size(59, 26);
             this.ScanNumberLow.TabIndex = 10;
             // 
             // ScanNumberLabel2
             // 
             this.ScanNumberLabel2.AutoSize = true;
             this.ScanNumberLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.ScanNumberLabel2.Location = new System.Drawing.Point(174, 32);
+            this.ScanNumberLabel2.Location = new System.Drawing.Point(290, 49);
+            this.ScanNumberLabel2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.ScanNumberLabel2.Name = "ScanNumberLabel2";
-            this.ScanNumberLabel2.Size = new System.Drawing.Size(15, 20);
+            this.ScanNumberLabel2.Size = new System.Drawing.Size(22, 29);
             this.ScanNumberLabel2.TabIndex = 12;
             this.ScanNumberLabel2.Text = "-";
             // 
@@ -783,17 +843,19 @@ namespace MSConvertGUI
             this.DiaUmpirePanel.Controls.Add(this.DiaUmpireParamsFileBrowseButton);
             this.DiaUmpirePanel.Controls.Add(this.DiaUmpireParamsFileLabel);
             this.DiaUmpirePanel.Controls.Add(this.DiaUmpireParamsFileTextBox);
-            this.DiaUmpirePanel.Location = new System.Drawing.Point(21, 54);
+            this.DiaUmpirePanel.Location = new System.Drawing.Point(35, 83);
+            this.DiaUmpirePanel.Margin = new System.Windows.Forms.Padding(5);
             this.DiaUmpirePanel.Name = "DiaUmpirePanel";
-            this.DiaUmpirePanel.Size = new System.Drawing.Size(473, 91);
+            this.DiaUmpirePanel.Size = new System.Drawing.Size(788, 140);
             this.DiaUmpirePanel.TabIndex = 10;
             this.DiaUmpirePanel.Visible = false;
             // 
             // DiaUmpireParamsFileBrowseButton
             // 
-            this.DiaUmpireParamsFileBrowseButton.Location = new System.Drawing.Point(416, 34);
+            this.DiaUmpireParamsFileBrowseButton.Location = new System.Drawing.Point(693, 52);
+            this.DiaUmpireParamsFileBrowseButton.Margin = new System.Windows.Forms.Padding(5);
             this.DiaUmpireParamsFileBrowseButton.Name = "DiaUmpireParamsFileBrowseButton";
-            this.DiaUmpireParamsFileBrowseButton.Size = new System.Drawing.Size(50, 23);
+            this.DiaUmpireParamsFileBrowseButton.Size = new System.Drawing.Size(83, 35);
             this.DiaUmpireParamsFileBrowseButton.TabIndex = 7;
             this.DiaUmpireParamsFileBrowseButton.Text = "Browse";
             this.DiaUmpireParamsFileBrowseButton.UseVisualStyleBackColor = true;
@@ -802,9 +864,10 @@ namespace MSConvertGUI
             // DiaUmpireParamsFileLabel
             // 
             this.DiaUmpireParamsFileLabel.AutoSize = true;
-            this.DiaUmpireParamsFileLabel.Location = new System.Drawing.Point(7, 39);
+            this.DiaUmpireParamsFileLabel.Location = new System.Drawing.Point(12, 60);
+            this.DiaUmpireParamsFileLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.DiaUmpireParamsFileLabel.Name = "DiaUmpireParamsFileLabel";
-            this.DiaUmpireParamsFileLabel.Size = new System.Drawing.Size(61, 13);
+            this.DiaUmpireParamsFileLabel.Size = new System.Drawing.Size(99, 20);
             this.DiaUmpireParamsFileLabel.TabIndex = 5;
             this.DiaUmpireParamsFileLabel.Text = "Params file:";
             // 
@@ -812,9 +875,10 @@ namespace MSConvertGUI
             // 
             this.DiaUmpireParamsFileTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.DiaUmpireParamsFileTextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystem;
-            this.DiaUmpireParamsFileTextBox.Location = new System.Drawing.Point(68, 36);
+            this.DiaUmpireParamsFileTextBox.Location = new System.Drawing.Point(113, 55);
+            this.DiaUmpireParamsFileTextBox.Margin = new System.Windows.Forms.Padding(8);
             this.DiaUmpireParamsFileTextBox.Name = "DiaUmpireParamsFileTextBox";
-            this.DiaUmpireParamsFileTextBox.Size = new System.Drawing.Size(342, 20);
+            this.DiaUmpireParamsFileTextBox.Size = new System.Drawing.Size(567, 26);
             this.DiaUmpireParamsFileTextBox.TabIndex = 6;
             // 
             // FilterBox
@@ -822,9 +886,10 @@ namespace MSConvertGUI
             this.FilterBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.FilterBox.FormattingEnabled = true;
             this.FilterBox.Items.AddRange(new object[] { "Charge State Predictor", "Demultiplex", "DIA-Umpire", "ETD Peak Filter", "Lockmass Refiner", "Peak Picking", "Scan Summing", "Subset", "Threshold Peak Filter", "Waters DDA Processing", "Zero Samples" });
-            this.FilterBox.Location = new System.Drawing.Point(173, 19);
+            this.FilterBox.Location = new System.Drawing.Point(288, 29);
+            this.FilterBox.Margin = new System.Windows.Forms.Padding(5);
             this.FilterBox.Name = "FilterBox";
-            this.FilterBox.Size = new System.Drawing.Size(177, 21);
+            this.FilterBox.Size = new System.Drawing.Size(292, 28);
             this.FilterBox.TabIndex = 0;
             this.FilterBox.SelectedIndexChanged += new System.EventHandler(this.FilterBox_SelectedIndexChanged);
             // 
@@ -834,9 +899,10 @@ namespace MSConvertGUI
             this.ETDFilterPanel.Controls.Add(this.ETDRemoveChargeReducedBox);
             this.ETDFilterPanel.Controls.Add(this.ETDRemoveNeutralLossBox);
             this.ETDFilterPanel.Controls.Add(this.ETDRemovePrecursorBox);
-            this.ETDFilterPanel.Location = new System.Drawing.Point(22, 46);
+            this.ETDFilterPanel.Location = new System.Drawing.Point(37, 71);
+            this.ETDFilterPanel.Margin = new System.Windows.Forms.Padding(5);
             this.ETDFilterPanel.Name = "ETDFilterPanel";
-            this.ETDFilterPanel.Size = new System.Drawing.Size(283, 91);
+            this.ETDFilterPanel.Size = new System.Drawing.Size(472, 140);
             this.ETDFilterPanel.TabIndex = 3;
             this.ETDFilterPanel.Visible = false;
             // 
@@ -844,9 +910,10 @@ namespace MSConvertGUI
             // 
             this.ETDBlanketRemovalBox.AutoSize = true;
             this.ETDBlanketRemovalBox.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ETDBlanketRemovalBox.Location = new System.Drawing.Point(108, 71);
+            this.ETDBlanketRemovalBox.Location = new System.Drawing.Point(180, 109);
+            this.ETDBlanketRemovalBox.Margin = new System.Windows.Forms.Padding(5);
             this.ETDBlanketRemovalBox.Name = "ETDBlanketRemovalBox";
-            this.ETDBlanketRemovalBox.Size = new System.Drawing.Size(110, 17);
+            this.ETDBlanketRemovalBox.Size = new System.Drawing.Size(166, 24);
             this.ETDBlanketRemovalBox.TabIndex = 9;
             this.ETDBlanketRemovalBox.Text = "Blanket Removal:";
             this.ETDBlanketRemovalBox.UseVisualStyleBackColor = true;
@@ -857,9 +924,10 @@ namespace MSConvertGUI
             this.ETDRemoveChargeReducedBox.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ETDRemoveChargeReducedBox.Checked = true;
             this.ETDRemoveChargeReducedBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ETDRemoveChargeReducedBox.Location = new System.Drawing.Point(65, 25);
+            this.ETDRemoveChargeReducedBox.Location = new System.Drawing.Point(108, 38);
+            this.ETDRemoveChargeReducedBox.Margin = new System.Windows.Forms.Padding(5);
             this.ETDRemoveChargeReducedBox.Name = "ETDRemoveChargeReducedBox";
-            this.ETDRemoveChargeReducedBox.Size = new System.Drawing.Size(153, 17);
+            this.ETDRemoveChargeReducedBox.Size = new System.Drawing.Size(231, 24);
             this.ETDRemoveChargeReducedBox.TabIndex = 8;
             this.ETDRemoveChargeReducedBox.Text = "Remove Charge Reduced:";
             this.ETDRemoveChargeReducedBox.UseVisualStyleBackColor = true;
@@ -870,9 +938,10 @@ namespace MSConvertGUI
             this.ETDRemoveNeutralLossBox.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ETDRemoveNeutralLossBox.Checked = true;
             this.ETDRemoveNeutralLossBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ETDRemoveNeutralLossBox.Location = new System.Drawing.Point(87, 48);
+            this.ETDRemoveNeutralLossBox.Location = new System.Drawing.Point(145, 74);
+            this.ETDRemoveNeutralLossBox.Margin = new System.Windows.Forms.Padding(5);
             this.ETDRemoveNeutralLossBox.Name = "ETDRemoveNeutralLossBox";
-            this.ETDRemoveNeutralLossBox.Size = new System.Drawing.Size(131, 17);
+            this.ETDRemoveNeutralLossBox.Size = new System.Drawing.Size(202, 24);
             this.ETDRemoveNeutralLossBox.TabIndex = 7;
             this.ETDRemoveNeutralLossBox.Text = "Remove Neutral Loss:";
             this.ETDRemoveNeutralLossBox.UseVisualStyleBackColor = true;
@@ -883,9 +952,10 @@ namespace MSConvertGUI
             this.ETDRemovePrecursorBox.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ETDRemovePrecursorBox.Checked = true;
             this.ETDRemovePrecursorBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ETDRemovePrecursorBox.Location = new System.Drawing.Point(101, 2);
+            this.ETDRemovePrecursorBox.Location = new System.Drawing.Point(168, 3);
+            this.ETDRemovePrecursorBox.Margin = new System.Windows.Forms.Padding(5);
             this.ETDRemovePrecursorBox.Name = "ETDRemovePrecursorBox";
-            this.ETDRemovePrecursorBox.Size = new System.Drawing.Size(117, 17);
+            this.ETDRemovePrecursorBox.Size = new System.Drawing.Size(180, 24);
             this.ETDRemovePrecursorBox.TabIndex = 6;
             this.ETDRemovePrecursorBox.Text = "Remove Precursor:";
             this.ETDRemovePrecursorBox.UseVisualStyleBackColor = true;
@@ -898,36 +968,40 @@ namespace MSConvertGUI
             this.ThresholdFilterPanel.Controls.Add(this.thresholdOrientationComboBox);
             this.ThresholdFilterPanel.Controls.Add(this.thresholdValueTextBox);
             this.ThresholdFilterPanel.Controls.Add(this.thresholdTypeComboBox);
-            this.ThresholdFilterPanel.Location = new System.Drawing.Point(22, 46);
+            this.ThresholdFilterPanel.Location = new System.Drawing.Point(37, 71);
+            this.ThresholdFilterPanel.Margin = new System.Windows.Forms.Padding(5);
             this.ThresholdFilterPanel.Name = "ThresholdFilterPanel";
-            this.ThresholdFilterPanel.Size = new System.Drawing.Size(283, 91);
+            this.ThresholdFilterPanel.Size = new System.Drawing.Size(472, 140);
             this.ThresholdFilterPanel.TabIndex = 20;
             this.ThresholdFilterPanel.Visible = false;
             // 
             // thresholdValueLabel
             // 
             this.thresholdValueLabel.AutoSize = true;
-            this.thresholdValueLabel.Location = new System.Drawing.Point(69, 64);
+            this.thresholdValueLabel.Location = new System.Drawing.Point(115, 98);
+            this.thresholdValueLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.thresholdValueLabel.Name = "thresholdValueLabel";
-            this.thresholdValueLabel.Size = new System.Drawing.Size(37, 13);
+            this.thresholdValueLabel.Size = new System.Drawing.Size(56, 20);
             this.thresholdValueLabel.TabIndex = 16;
             this.thresholdValueLabel.Text = "Value:";
             // 
             // thresholdOrientationLabel
             // 
             this.thresholdOrientationLabel.AutoSize = true;
-            this.thresholdOrientationLabel.Location = new System.Drawing.Point(45, 37);
+            this.thresholdOrientationLabel.Location = new System.Drawing.Point(75, 57);
+            this.thresholdOrientationLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.thresholdOrientationLabel.Name = "thresholdOrientationLabel";
-            this.thresholdOrientationLabel.Size = new System.Drawing.Size(61, 13);
+            this.thresholdOrientationLabel.Size = new System.Drawing.Size(96, 20);
             this.thresholdOrientationLabel.TabIndex = 15;
             this.thresholdOrientationLabel.Text = "Orientation:";
             // 
             // thresholdTypeLabel
             // 
             this.thresholdTypeLabel.AutoSize = true;
-            this.thresholdTypeLabel.Location = new System.Drawing.Point(26, 10);
+            this.thresholdTypeLabel.Location = new System.Drawing.Point(43, 15);
+            this.thresholdTypeLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.thresholdTypeLabel.Name = "thresholdTypeLabel";
-            this.thresholdTypeLabel.Size = new System.Drawing.Size(80, 13);
+            this.thresholdTypeLabel.Size = new System.Drawing.Size(124, 20);
             this.thresholdTypeLabel.TabIndex = 14;
             this.thresholdTypeLabel.Text = "Threshold type:";
             // 
@@ -936,25 +1010,28 @@ namespace MSConvertGUI
             this.thresholdOrientationComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.thresholdOrientationComboBox.FormattingEnabled = true;
             this.thresholdOrientationComboBox.Items.AddRange(new object[] { "Most intense", "Least intense" });
-            this.thresholdOrientationComboBox.Location = new System.Drawing.Point(113, 34);
+            this.thresholdOrientationComboBox.Location = new System.Drawing.Point(188, 52);
+            this.thresholdOrientationComboBox.Margin = new System.Windows.Forms.Padding(5);
             this.thresholdOrientationComboBox.Name = "thresholdOrientationComboBox";
-            this.thresholdOrientationComboBox.Size = new System.Drawing.Size(121, 21);
+            this.thresholdOrientationComboBox.Size = new System.Drawing.Size(199, 28);
             this.thresholdOrientationComboBox.TabIndex = 2;
             // 
             // thresholdValueTextBox
             // 
-            this.thresholdValueTextBox.Location = new System.Drawing.Point(114, 61);
+            this.thresholdValueTextBox.Location = new System.Drawing.Point(190, 94);
+            this.thresholdValueTextBox.Margin = new System.Windows.Forms.Padding(8);
             this.thresholdValueTextBox.Name = "thresholdValueTextBox";
-            this.thresholdValueTextBox.Size = new System.Drawing.Size(120, 20);
+            this.thresholdValueTextBox.Size = new System.Drawing.Size(197, 26);
             this.thresholdValueTextBox.TabIndex = 1;
             // 
             // thresholdTypeComboBox
             // 
             this.thresholdTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.thresholdTypeComboBox.FormattingEnabled = true;
-            this.thresholdTypeComboBox.Location = new System.Drawing.Point(113, 7);
+            this.thresholdTypeComboBox.Location = new System.Drawing.Point(188, 11);
+            this.thresholdTypeComboBox.Margin = new System.Windows.Forms.Padding(5);
             this.thresholdTypeComboBox.Name = "thresholdTypeComboBox";
-            this.thresholdTypeComboBox.Size = new System.Drawing.Size(121, 21);
+            this.thresholdTypeComboBox.Size = new System.Drawing.Size(199, 28);
             this.thresholdTypeComboBox.TabIndex = 0;
             // 
             // ChargeStatePredictorPanel
@@ -966,35 +1043,39 @@ namespace MSConvertGUI
             this.ChargeStatePredictorPanel.Controls.Add(this.ChaSingleBox);
             this.ChargeStatePredictorPanel.Controls.Add(this.ChaSingleLabel);
             this.ChargeStatePredictorPanel.Controls.Add(this.ChaOverwriteCharge);
-            this.ChargeStatePredictorPanel.Location = new System.Drawing.Point(22, 46);
+            this.ChargeStatePredictorPanel.Location = new System.Drawing.Point(37, 71);
+            this.ChargeStatePredictorPanel.Margin = new System.Windows.Forms.Padding(5);
             this.ChargeStatePredictorPanel.Name = "ChargeStatePredictorPanel";
-            this.ChargeStatePredictorPanel.Size = new System.Drawing.Size(283, 91);
+            this.ChargeStatePredictorPanel.Size = new System.Drawing.Size(472, 140);
             this.ChargeStatePredictorPanel.TabIndex = 4;
             this.ChargeStatePredictorPanel.Visible = false;
             // 
             // ChaMCMaxLabel
             // 
             this.ChaMCMaxLabel.AutoSize = true;
-            this.ChaMCMaxLabel.Location = new System.Drawing.Point(182, 66);
+            this.ChaMCMaxLabel.Location = new System.Drawing.Point(303, 102);
+            this.ChaMCMaxLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.ChaMCMaxLabel.Name = "ChaMCMaxLabel";
-            this.ChaMCMaxLabel.Size = new System.Drawing.Size(30, 13);
+            this.ChaMCMaxLabel.Size = new System.Drawing.Size(45, 20);
             this.ChaMCMaxLabel.TabIndex = 19;
             this.ChaMCMaxLabel.Text = "Max:";
             // 
             // ChaMCMaxBox
             // 
-            this.ChaMCMaxBox.Location = new System.Drawing.Point(215, 62);
+            this.ChaMCMaxBox.Location = new System.Drawing.Point(358, 95);
+            this.ChaMCMaxBox.Margin = new System.Windows.Forms.Padding(8);
             this.ChaMCMaxBox.Name = "ChaMCMaxBox";
-            this.ChaMCMaxBox.Size = new System.Drawing.Size(37, 20);
+            this.ChaMCMaxBox.Size = new System.Drawing.Size(59, 26);
             this.ChaMCMaxBox.TabIndex = 18;
             this.ChaMCMaxBox.Text = "3";
             this.ChaMCMaxBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumTextBox_KeyPress);
             // 
             // ChaMCMinBox
             // 
-            this.ChaMCMinBox.Location = new System.Drawing.Point(133, 62);
+            this.ChaMCMinBox.Location = new System.Drawing.Point(222, 95);
+            this.ChaMCMinBox.Margin = new System.Windows.Forms.Padding(8);
             this.ChaMCMinBox.Name = "ChaMCMinBox";
-            this.ChaMCMinBox.Size = new System.Drawing.Size(37, 20);
+            this.ChaMCMinBox.Size = new System.Drawing.Size(59, 26);
             this.ChaMCMinBox.TabIndex = 17;
             this.ChaMCMinBox.Text = "2";
             this.ChaMCMinBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumTextBox_KeyPress);
@@ -1002,9 +1083,10 @@ namespace MSConvertGUI
             // ChaMCMinLabel
             // 
             this.ChaMCMinLabel.AutoSize = true;
-            this.ChaMCMinLabel.Location = new System.Drawing.Point(30, 66);
+            this.ChaMCMinLabel.Location = new System.Drawing.Point(50, 102);
+            this.ChaMCMinLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.ChaMCMinLabel.Name = "ChaMCMinLabel";
-            this.ChaMCMinLabel.Size = new System.Drawing.Size(103, 13);
+            this.ChaMCMinLabel.Size = new System.Drawing.Size(163, 20);
             this.ChaMCMinLabel.TabIndex = 9;
             this.ChaMCMinLabel.Text = "Multiple Charge Min:";
             // 
@@ -1012,19 +1094,21 @@ namespace MSConvertGUI
             // 
             this.ChaSingleBox.DecimalPlaces = 2;
             this.ChaSingleBox.Increment = new decimal(new int[] { 1, 0, 0, 65536 });
-            this.ChaSingleBox.Location = new System.Drawing.Point(174, 36);
+            this.ChaSingleBox.Location = new System.Drawing.Point(290, 55);
+            this.ChaSingleBox.Margin = new System.Windows.Forms.Padding(8);
             this.ChaSingleBox.Maximum = new decimal(new int[] { 1, 0, 0, 0 });
             this.ChaSingleBox.Name = "ChaSingleBox";
-            this.ChaSingleBox.Size = new System.Drawing.Size(41, 20);
+            this.ChaSingleBox.Size = new System.Drawing.Size(68, 26);
             this.ChaSingleBox.TabIndex = 8;
             this.ChaSingleBox.Value = new decimal(new int[] { 9, 0, 0, 65536 });
             // 
             // ChaSingleLabel
             // 
             this.ChaSingleLabel.AutoSize = true;
-            this.ChaSingleLabel.Location = new System.Drawing.Point(67, 38);
+            this.ChaSingleLabel.Location = new System.Drawing.Point(112, 58);
+            this.ChaSingleLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.ChaSingleLabel.Name = "ChaSingleLabel";
-            this.ChaSingleLabel.Size = new System.Drawing.Size(107, 13);
+            this.ChaSingleLabel.Size = new System.Drawing.Size(170, 20);
             this.ChaSingleLabel.TabIndex = 7;
             this.ChaSingleLabel.Text = "Single Charge % TIC:";
             // 
@@ -1032,9 +1116,10 @@ namespace MSConvertGUI
             // 
             this.ChaOverwriteCharge.AutoSize = true;
             this.ChaOverwriteCharge.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ChaOverwriteCharge.Location = new System.Drawing.Point(86, 12);
+            this.ChaOverwriteCharge.Location = new System.Drawing.Point(143, 18);
+            this.ChaOverwriteCharge.Margin = new System.Windows.Forms.Padding(5);
             this.ChaOverwriteCharge.Name = "ChaOverwriteCharge";
-            this.ChaOverwriteCharge.Size = new System.Drawing.Size(111, 17);
+            this.ChaOverwriteCharge.Size = new System.Drawing.Size(171, 24);
             this.ChaOverwriteCharge.TabIndex = 6;
             this.ChaOverwriteCharge.Text = "Overwrite Charge:";
             this.ChaOverwriteCharge.UseVisualStyleBackColor = true;
@@ -1051,9 +1136,10 @@ namespace MSConvertGUI
             this.ScanSummingPanel.Controls.Add(this.label4);
             this.ScanSummingPanel.Controls.Add(this.ScanSummingPrecursorToleranceTextBox);
             this.ScanSummingPanel.Controls.Add(this.label5);
-            this.ScanSummingPanel.Location = new System.Drawing.Point(24, 47);
+            this.ScanSummingPanel.Location = new System.Drawing.Point(40, 72);
+            this.ScanSummingPanel.Margin = new System.Windows.Forms.Padding(5);
             this.ScanSummingPanel.Name = "ScanSummingPanel";
-            this.ScanSummingPanel.Size = new System.Drawing.Size(283, 112);
+            this.ScanSummingPanel.Size = new System.Drawing.Size(472, 172);
             this.ScanSummingPanel.TabIndex = 18;
             this.ScanSummingPanel.Visible = false;
             // 
@@ -1061,9 +1147,10 @@ namespace MSConvertGUI
             // 
             this.ScanSummingSumMs1Checkbox.AutoSize = true;
             this.ScanSummingSumMs1Checkbox.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ScanSummingSumMs1Checkbox.Location = new System.Drawing.Point(14, 87);
+            this.ScanSummingSumMs1Checkbox.Location = new System.Drawing.Point(23, 134);
+            this.ScanSummingSumMs1Checkbox.Margin = new System.Windows.Forms.Padding(5);
             this.ScanSummingSumMs1Checkbox.Name = "ScanSummingSumMs1Checkbox";
-            this.ScanSummingSumMs1Checkbox.Size = new System.Drawing.Size(128, 17);
+            this.ScanSummingSumMs1Checkbox.Size = new System.Drawing.Size(199, 24);
             this.ScanSummingSumMs1Checkbox.TabIndex = 19;
             this.ScanSummingSumMs1Checkbox.Text = "Sum MS1 scans also:";
             this.ScanSummingSumMs1Checkbox.UseVisualStyleBackColor = true;
@@ -1071,78 +1158,87 @@ namespace MSConvertGUI
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(192, 65);
+            this.label7.Location = new System.Drawing.Point(320, 100);
+            this.label7.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(77, 13);
+            this.label7.Size = new System.Drawing.Size(118, 20);
             this.label7.TabIndex = 18;
             this.label7.Text = "ms or vs/cm^2";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(192, 40);
+            this.label8.Location = new System.Drawing.Point(320, 62);
+            this.label8.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(47, 13);
+            this.label8.Size = new System.Drawing.Size(72, 20);
             this.label8.TabIndex = 16;
             this.label8.Text = "seconds";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(193, 14);
+            this.label9.Location = new System.Drawing.Point(322, 22);
+            this.label9.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(25, 13);
+            this.label9.Size = new System.Drawing.Size(37, 20);
             this.label9.TabIndex = 17;
             this.label9.Text = "m/z";
             // 
             // ScanSummingIonMobilityToleranceTextBox
             // 
-            this.ScanSummingIonMobilityToleranceTextBox.Location = new System.Drawing.Point(136, 62);
+            this.ScanSummingIonMobilityToleranceTextBox.Location = new System.Drawing.Point(227, 95);
+            this.ScanSummingIonMobilityToleranceTextBox.Margin = new System.Windows.Forms.Padding(8);
             this.ScanSummingIonMobilityToleranceTextBox.Name = "ScanSummingIonMobilityToleranceTextBox";
-            this.ScanSummingIonMobilityToleranceTextBox.Size = new System.Drawing.Size(48, 20);
+            this.ScanSummingIonMobilityToleranceTextBox.Size = new System.Drawing.Size(77, 26);
             this.ScanSummingIonMobilityToleranceTextBox.TabIndex = 14;
             this.ScanSummingIonMobilityToleranceTextBox.Text = "5";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(15, 64);
+            this.label6.Location = new System.Drawing.Point(25, 98);
+            this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(118, 13);
+            this.label6.Size = new System.Drawing.Size(187, 20);
             this.label6.TabIndex = 15;
             this.label6.Text = "Ion mobility tolerance: ±";
             // 
             // ScanSummingScanTimeToleranceTextBox
             // 
-            this.ScanSummingScanTimeToleranceTextBox.Location = new System.Drawing.Point(136, 36);
+            this.ScanSummingScanTimeToleranceTextBox.Location = new System.Drawing.Point(227, 55);
+            this.ScanSummingScanTimeToleranceTextBox.Margin = new System.Windows.Forms.Padding(8);
             this.ScanSummingScanTimeToleranceTextBox.Name = "ScanSummingScanTimeToleranceTextBox";
-            this.ScanSummingScanTimeToleranceTextBox.Size = new System.Drawing.Size(48, 20);
+            this.ScanSummingScanTimeToleranceTextBox.Size = new System.Drawing.Size(77, 26);
             this.ScanSummingScanTimeToleranceTextBox.TabIndex = 1;
             this.ScanSummingScanTimeToleranceTextBox.Text = "5";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(20, 39);
+            this.label4.Location = new System.Drawing.Point(33, 60);
+            this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(113, 13);
+            this.label4.Size = new System.Drawing.Size(178, 20);
             this.label4.TabIndex = 3;
             this.label4.Text = "Scan time tolerance: ±";
             // 
             // ScanSummingPrecursorToleranceTextBox
             // 
-            this.ScanSummingPrecursorToleranceTextBox.Location = new System.Drawing.Point(136, 10);
+            this.ScanSummingPrecursorToleranceTextBox.Location = new System.Drawing.Point(227, 15);
+            this.ScanSummingPrecursorToleranceTextBox.Margin = new System.Windows.Forms.Padding(8);
             this.ScanSummingPrecursorToleranceTextBox.Name = "ScanSummingPrecursorToleranceTextBox";
-            this.ScanSummingPrecursorToleranceTextBox.Size = new System.Drawing.Size(48, 20);
+            this.ScanSummingPrecursorToleranceTextBox.Size = new System.Drawing.Size(77, 26);
             this.ScanSummingPrecursorToleranceTextBox.TabIndex = 0;
             this.ScanSummingPrecursorToleranceTextBox.Text = "0.05";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(22, 14);
+            this.label5.Location = new System.Drawing.Point(37, 22);
+            this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(111, 13);
+            this.label5.Size = new System.Drawing.Size(177, 20);
             this.label5.TabIndex = 13;
             this.label5.Text = "Precursor tolerance: ±";
             // 
@@ -1152,43 +1248,48 @@ namespace MSConvertGUI
             this.LockmassRefinerPanel.Controls.Add(this.lockmassToleranceLabel);
             this.LockmassRefinerPanel.Controls.Add(this.lockmassMzLabel);
             this.LockmassRefinerPanel.Controls.Add(this.LockmassMz);
-            this.LockmassRefinerPanel.Location = new System.Drawing.Point(22, 46);
+            this.LockmassRefinerPanel.Location = new System.Drawing.Point(37, 71);
+            this.LockmassRefinerPanel.Margin = new System.Windows.Forms.Padding(5);
             this.LockmassRefinerPanel.Name = "LockmassRefinerPanel";
-            this.LockmassRefinerPanel.Size = new System.Drawing.Size(283, 91);
+            this.LockmassRefinerPanel.Size = new System.Drawing.Size(472, 140);
             this.LockmassRefinerPanel.TabIndex = 17;
             this.LockmassRefinerPanel.Visible = false;
             // 
             // LockmassTolerance
             // 
-            this.LockmassTolerance.Location = new System.Drawing.Point(135, 36);
+            this.LockmassTolerance.Location = new System.Drawing.Point(225, 55);
+            this.LockmassTolerance.Margin = new System.Windows.Forms.Padding(8);
             this.LockmassTolerance.Name = "LockmassTolerance";
-            this.LockmassTolerance.Size = new System.Drawing.Size(62, 20);
+            this.LockmassTolerance.Size = new System.Drawing.Size(101, 26);
             this.LockmassTolerance.TabIndex = 1;
             this.LockmassTolerance.Text = "0.1";
             // 
             // lockmassToleranceLabel
             // 
             this.lockmassToleranceLabel.AutoSize = true;
-            this.lockmassToleranceLabel.Location = new System.Drawing.Point(48, 39);
+            this.lockmassToleranceLabel.Location = new System.Drawing.Point(80, 60);
+            this.lockmassToleranceLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lockmassToleranceLabel.Name = "lockmassToleranceLabel";
-            this.lockmassToleranceLabel.Size = new System.Drawing.Size(79, 13);
+            this.lockmassToleranceLabel.Size = new System.Drawing.Size(121, 20);
             this.lockmassToleranceLabel.TabIndex = 3;
             this.lockmassToleranceLabel.Text = "m/z Tolerance:";
             // 
             // lockmassMzLabel
             // 
             this.lockmassMzLabel.AutoSize = true;
-            this.lockmassMzLabel.Location = new System.Drawing.Point(47, 12);
+            this.lockmassMzLabel.Location = new System.Drawing.Point(78, 18);
+            this.lockmassMzLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lockmassMzLabel.Name = "lockmassMzLabel";
-            this.lockmassMzLabel.Size = new System.Drawing.Size(81, 13);
+            this.lockmassMzLabel.Size = new System.Drawing.Size(124, 20);
             this.lockmassMzLabel.TabIndex = 13;
             this.lockmassMzLabel.Text = "Reference m/z:";
             // 
             // LockmassMz
             // 
-            this.LockmassMz.Location = new System.Drawing.Point(135, 10);
+            this.LockmassMz.Location = new System.Drawing.Point(225, 15);
+            this.LockmassMz.Margin = new System.Windows.Forms.Padding(8);
             this.LockmassMz.Name = "LockmassMz";
-            this.LockmassMz.Size = new System.Drawing.Size(62, 20);
+            this.LockmassMz.Size = new System.Drawing.Size(101, 26);
             this.LockmassMz.TabIndex = 0;
             // 
             // DemultiplexPanel
@@ -1197,9 +1298,10 @@ namespace MSConvertGUI
             this.DemultiplexPanel.Controls.Add(this.DemuxMassErrorValue);
             this.DemultiplexPanel.Controls.Add(this.DemuxMassErrorLabel);
             this.DemultiplexPanel.Controls.Add(this.DemuxTypeBox);
-            this.DemultiplexPanel.Location = new System.Drawing.Point(22, 46);
+            this.DemultiplexPanel.Location = new System.Drawing.Point(37, 71);
+            this.DemultiplexPanel.Margin = new System.Windows.Forms.Padding(5);
             this.DemultiplexPanel.Name = "DemultiplexPanel";
-            this.DemultiplexPanel.Size = new System.Drawing.Size(283, 91);
+            this.DemultiplexPanel.Size = new System.Drawing.Size(472, 140);
             this.DemultiplexPanel.TabIndex = 18;
             this.DemultiplexPanel.Visible = false;
             // 
@@ -1208,25 +1310,28 @@ namespace MSConvertGUI
             this.DemuxMassErrorTypeBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.DemuxMassErrorTypeBox.FormattingEnabled = true;
             this.DemuxMassErrorTypeBox.Items.AddRange(new object[] { "ppm", "Da" });
-            this.DemuxMassErrorTypeBox.Location = new System.Drawing.Point(151, 50);
+            this.DemuxMassErrorTypeBox.Location = new System.Drawing.Point(252, 77);
+            this.DemuxMassErrorTypeBox.Margin = new System.Windows.Forms.Padding(5);
             this.DemuxMassErrorTypeBox.Name = "DemuxMassErrorTypeBox";
-            this.DemuxMassErrorTypeBox.Size = new System.Drawing.Size(58, 21);
+            this.DemuxMassErrorTypeBox.Size = new System.Drawing.Size(94, 28);
             this.DemuxMassErrorTypeBox.TabIndex = 18;
             // 
             // DemuxMassErrorValue
             // 
-            this.DemuxMassErrorValue.Location = new System.Drawing.Point(87, 51);
+            this.DemuxMassErrorValue.Location = new System.Drawing.Point(145, 78);
+            this.DemuxMassErrorValue.Margin = new System.Windows.Forms.Padding(8);
             this.DemuxMassErrorValue.Name = "DemuxMassErrorValue";
-            this.DemuxMassErrorValue.Size = new System.Drawing.Size(48, 20);
+            this.DemuxMassErrorValue.Size = new System.Drawing.Size(77, 26);
             this.DemuxMassErrorValue.TabIndex = 17;
             this.DemuxMassErrorValue.Text = "10.0";
             // 
             // DemuxMassErrorLabel
             // 
             this.DemuxMassErrorLabel.AutoSize = true;
-            this.DemuxMassErrorLabel.Location = new System.Drawing.Point(17, 53);
+            this.DemuxMassErrorLabel.Location = new System.Drawing.Point(28, 82);
+            this.DemuxMassErrorLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.DemuxMassErrorLabel.Name = "DemuxMassErrorLabel";
-            this.DemuxMassErrorLabel.Size = new System.Drawing.Size(60, 13);
+            this.DemuxMassErrorLabel.Size = new System.Drawing.Size(98, 20);
             this.DemuxMassErrorLabel.TabIndex = 16;
             this.DemuxMassErrorLabel.Text = "Mass Error:";
             // 
@@ -1235,9 +1340,10 @@ namespace MSConvertGUI
             this.DemuxTypeBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.DemuxTypeBox.FormattingEnabled = true;
             this.DemuxTypeBox.Items.AddRange(new object[] { "Overlap Only", "MSX (Overlap and Non-Overlap)" });
-            this.DemuxTypeBox.Location = new System.Drawing.Point(20, 16);
+            this.DemuxTypeBox.Location = new System.Drawing.Point(33, 25);
+            this.DemuxTypeBox.Margin = new System.Windows.Forms.Padding(5);
             this.DemuxTypeBox.Name = "DemuxTypeBox";
-            this.DemuxTypeBox.Size = new System.Drawing.Size(189, 21);
+            this.DemuxTypeBox.Size = new System.Drawing.Size(312, 28);
             this.DemuxTypeBox.TabIndex = 15;
             // 
             // PeakPickingPanel
@@ -1252,52 +1358,58 @@ namespace MSConvertGUI
             this.PeakPickingPanel.Controls.Add(this.PeakMSLevelSeperator);
             this.PeakPickingPanel.Controls.Add(this.PeakMSLevelHigh);
             this.PeakPickingPanel.Controls.Add(this.PeakMSLevelLow);
-            this.PeakPickingPanel.Location = new System.Drawing.Point(6, 46);
+            this.PeakPickingPanel.Location = new System.Drawing.Point(10, 71);
+            this.PeakPickingPanel.Margin = new System.Windows.Forms.Padding(5);
             this.PeakPickingPanel.Name = "PeakPickingPanel";
-            this.PeakPickingPanel.Size = new System.Drawing.Size(331, 91);
+            this.PeakPickingPanel.Size = new System.Drawing.Size(552, 140);
             this.PeakPickingPanel.TabIndex = 2;
             this.PeakPickingPanel.Visible = false;
             // 
             // PeakMinSpacingLabel
             // 
             this.PeakMinSpacingLabel.AutoSize = true;
-            this.PeakMinSpacingLabel.Location = new System.Drawing.Point(228, 51);
+            this.PeakMinSpacingLabel.Location = new System.Drawing.Point(380, 78);
+            this.PeakMinSpacingLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.PeakMinSpacingLabel.Name = "PeakMinSpacingLabel";
-            this.PeakMinSpacingLabel.Size = new System.Drawing.Size(94, 13);
+            this.PeakMinSpacingLabel.Size = new System.Drawing.Size(144, 20);
             this.PeakMinSpacingLabel.TabIndex = 26;
             this.PeakMinSpacingLabel.Text = "Min peak spacing:";
             // 
             // PeakMinSpacing
             // 
-            this.PeakMinSpacing.Location = new System.Drawing.Point(256, 67);
+            this.PeakMinSpacing.Location = new System.Drawing.Point(427, 103);
+            this.PeakMinSpacing.Margin = new System.Windows.Forms.Padding(8);
             this.PeakMinSpacing.Name = "PeakMinSpacing";
-            this.PeakMinSpacing.Size = new System.Drawing.Size(37, 20);
+            this.PeakMinSpacing.Size = new System.Drawing.Size(59, 26);
             this.PeakMinSpacing.TabIndex = 25;
             this.PeakMinSpacing.Text = "0.1";
             // 
             // PeakMinSnrLabel
             // 
             this.PeakMinSnrLabel.AutoSize = true;
-            this.PeakMinSnrLabel.Location = new System.Drawing.Point(145, 51);
+            this.PeakMinSnrLabel.Location = new System.Drawing.Point(242, 78);
+            this.PeakMinSnrLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.PeakMinSnrLabel.Name = "PeakMinSnrLabel";
-            this.PeakMinSnrLabel.Size = new System.Drawing.Size(53, 13);
+            this.PeakMinSnrLabel.Size = new System.Drawing.Size(81, 20);
             this.PeakMinSnrLabel.TabIndex = 24;
             this.PeakMinSnrLabel.Text = "Min SNR:";
             // 
             // PeakMinSnr
             // 
-            this.PeakMinSnr.Location = new System.Drawing.Point(152, 67);
+            this.PeakMinSnr.Location = new System.Drawing.Point(253, 103);
+            this.PeakMinSnr.Margin = new System.Windows.Forms.Padding(8);
             this.PeakMinSnr.Name = "PeakMinSnr";
-            this.PeakMinSnr.Size = new System.Drawing.Size(37, 20);
+            this.PeakMinSnr.Size = new System.Drawing.Size(59, 26);
             this.PeakMinSnr.TabIndex = 23;
             this.PeakMinSnr.Text = "0.1";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(136, 6);
+            this.label1.Location = new System.Drawing.Point(227, 9);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 13);
+            this.label1.Size = new System.Drawing.Size(85, 20);
             this.label1.TabIndex = 22;
             this.label1.Text = "Algorithm:";
             // 
@@ -1306,9 +1418,10 @@ namespace MSConvertGUI
             this.PeakPickingAlgorithmComboBox.DisplayMember = "Text";
             this.PeakPickingAlgorithmComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.PeakPickingAlgorithmComboBox.FormattingEnabled = true;
-            this.PeakPickingAlgorithmComboBox.Location = new System.Drawing.Point(3, 23);
+            this.PeakPickingAlgorithmComboBox.Location = new System.Drawing.Point(5, 35);
+            this.PeakPickingAlgorithmComboBox.Margin = new System.Windows.Forms.Padding(5);
             this.PeakPickingAlgorithmComboBox.Name = "PeakPickingAlgorithmComboBox";
-            this.PeakPickingAlgorithmComboBox.Size = new System.Drawing.Size(325, 21);
+            this.PeakPickingAlgorithmComboBox.Size = new System.Drawing.Size(539, 28);
             this.PeakPickingAlgorithmComboBox.TabIndex = 21;
             this.PeakPickingAlgorithmComboBox.ValueMember = "Tag";
             this.PeakPickingAlgorithmComboBox.SelectedIndexChanged += new System.EventHandler(this.PeakPickingAlgorithmComboBox_SelectedIndexChanged);
@@ -1316,9 +1429,10 @@ namespace MSConvertGUI
             // PeakMSLevelLabel
             // 
             this.PeakMSLevelLabel.AutoSize = true;
-            this.PeakMSLevelLabel.Location = new System.Drawing.Point(33, 51);
+            this.PeakMSLevelLabel.Location = new System.Drawing.Point(55, 78);
+            this.PeakMSLevelLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.PeakMSLevelLabel.Name = "PeakMSLevelLabel";
-            this.PeakMSLevelLabel.Size = new System.Drawing.Size(60, 13);
+            this.PeakMSLevelLabel.Size = new System.Drawing.Size(93, 20);
             this.PeakMSLevelLabel.TabIndex = 20;
             this.PeakMSLevelLabel.Text = "MS Levels:";
             // 
@@ -1326,25 +1440,28 @@ namespace MSConvertGUI
             // 
             this.PeakMSLevelSeperator.AutoSize = true;
             this.PeakMSLevelSeperator.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.PeakMSLevelSeperator.Location = new System.Drawing.Point(54, 65);
+            this.PeakMSLevelSeperator.Location = new System.Drawing.Point(90, 100);
+            this.PeakMSLevelSeperator.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.PeakMSLevelSeperator.Name = "PeakMSLevelSeperator";
-            this.PeakMSLevelSeperator.Size = new System.Drawing.Size(15, 20);
+            this.PeakMSLevelSeperator.Size = new System.Drawing.Size(22, 29);
             this.PeakMSLevelSeperator.TabIndex = 19;
             this.PeakMSLevelSeperator.Text = "-";
             // 
             // PeakMSLevelHigh
             // 
-            this.PeakMSLevelHigh.Location = new System.Drawing.Point(71, 67);
+            this.PeakMSLevelHigh.Location = new System.Drawing.Point(118, 103);
+            this.PeakMSLevelHigh.Margin = new System.Windows.Forms.Padding(8);
             this.PeakMSLevelHigh.Name = "PeakMSLevelHigh";
-            this.PeakMSLevelHigh.Size = new System.Drawing.Size(37, 20);
+            this.PeakMSLevelHigh.Size = new System.Drawing.Size(59, 26);
             this.PeakMSLevelHigh.TabIndex = 18;
             this.PeakMSLevelHigh.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumTextBox_KeyPress);
             // 
             // PeakMSLevelLow
             // 
-            this.PeakMSLevelLow.Location = new System.Drawing.Point(15, 67);
+            this.PeakMSLevelLow.Location = new System.Drawing.Point(25, 103);
+            this.PeakMSLevelLow.Margin = new System.Windows.Forms.Padding(8);
             this.PeakMSLevelLow.Name = "PeakMSLevelLow";
-            this.PeakMSLevelLow.Size = new System.Drawing.Size(37, 20);
+            this.PeakMSLevelLow.Size = new System.Drawing.Size(59, 26);
             this.PeakMSLevelLow.TabIndex = 17;
             this.PeakMSLevelLow.Text = "1";
             this.PeakMSLevelLow.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumTextBox_KeyPress);
@@ -1358,18 +1475,20 @@ namespace MSConvertGUI
             this.ZeroSamplesPanel.Controls.Add(this.ZeroSamplesMSLevelSeperator);
             this.ZeroSamplesPanel.Controls.Add(this.ZeroSamplesMSLevelHigh);
             this.ZeroSamplesPanel.Controls.Add(this.ZeroSamplesMSLevelLow);
-            this.ZeroSamplesPanel.Location = new System.Drawing.Point(22, 46);
+            this.ZeroSamplesPanel.Location = new System.Drawing.Point(37, 71);
+            this.ZeroSamplesPanel.Margin = new System.Windows.Forms.Padding(5);
             this.ZeroSamplesPanel.Name = "ZeroSamplesPanel";
-            this.ZeroSamplesPanel.Size = new System.Drawing.Size(283, 91);
+            this.ZeroSamplesPanel.Size = new System.Drawing.Size(472, 140);
             this.ZeroSamplesPanel.TabIndex = 24;
             this.ZeroSamplesPanel.Visible = false;
             // 
             // ZeroSamplesAddMissing
             // 
             this.ZeroSamplesAddMissing.AutoSize = true;
-            this.ZeroSamplesAddMissing.Location = new System.Drawing.Point(93, 12);
+            this.ZeroSamplesAddMissing.Location = new System.Drawing.Point(155, 18);
+            this.ZeroSamplesAddMissing.Margin = new System.Windows.Forms.Padding(5);
             this.ZeroSamplesAddMissing.Name = "ZeroSamplesAddMissing";
-            this.ZeroSamplesAddMissing.Size = new System.Drawing.Size(127, 17);
+            this.ZeroSamplesAddMissing.Size = new System.Drawing.Size(197, 24);
             this.ZeroSamplesAddMissing.TabIndex = 30;
             this.ZeroSamplesAddMissing.TabStop = true;
             this.ZeroSamplesAddMissing.Text = "Add missing, flank by:";
@@ -1379,9 +1498,10 @@ namespace MSConvertGUI
             // ZeroSamplesAddMissingFlankCountBox
             // 
             this.ZeroSamplesAddMissingFlankCountBox.Enabled = false;
-            this.ZeroSamplesAddMissingFlankCountBox.Location = new System.Drawing.Point(221, 12);
+            this.ZeroSamplesAddMissingFlankCountBox.Location = new System.Drawing.Point(368, 18);
+            this.ZeroSamplesAddMissingFlankCountBox.Margin = new System.Windows.Forms.Padding(8);
             this.ZeroSamplesAddMissingFlankCountBox.Name = "ZeroSamplesAddMissingFlankCountBox";
-            this.ZeroSamplesAddMissingFlankCountBox.Size = new System.Drawing.Size(37, 20);
+            this.ZeroSamplesAddMissingFlankCountBox.Size = new System.Drawing.Size(59, 26);
             this.ZeroSamplesAddMissingFlankCountBox.TabIndex = 31;
             this.ZeroSamplesAddMissingFlankCountBox.Text = "5";
             this.ZeroSamplesAddMissingFlankCountBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumTextBox_KeyPress);
@@ -1390,9 +1510,10 @@ namespace MSConvertGUI
             // 
             this.ZeroSamplesRemove.AutoSize = true;
             this.ZeroSamplesRemove.Checked = true;
-            this.ZeroSamplesRemove.Location = new System.Drawing.Point(20, 12);
+            this.ZeroSamplesRemove.Location = new System.Drawing.Point(33, 18);
+            this.ZeroSamplesRemove.Margin = new System.Windows.Forms.Padding(5);
             this.ZeroSamplesRemove.Name = "ZeroSamplesRemove";
-            this.ZeroSamplesRemove.Size = new System.Drawing.Size(65, 17);
+            this.ZeroSamplesRemove.Size = new System.Drawing.Size(95, 24);
             this.ZeroSamplesRemove.TabIndex = 29;
             this.ZeroSamplesRemove.TabStop = true;
             this.ZeroSamplesRemove.Text = "Remove";
@@ -1402,9 +1523,10 @@ namespace MSConvertGUI
             // ZeroSamplesMSLevelLabel
             // 
             this.ZeroSamplesMSLevelLabel.AutoSize = true;
-            this.ZeroSamplesMSLevelLabel.Location = new System.Drawing.Point(113, 41);
+            this.ZeroSamplesMSLevelLabel.Location = new System.Drawing.Point(188, 63);
+            this.ZeroSamplesMSLevelLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.ZeroSamplesMSLevelLabel.Name = "ZeroSamplesMSLevelLabel";
-            this.ZeroSamplesMSLevelLabel.Size = new System.Drawing.Size(60, 13);
+            this.ZeroSamplesMSLevelLabel.Size = new System.Drawing.Size(93, 20);
             this.ZeroSamplesMSLevelLabel.TabIndex = 25;
             this.ZeroSamplesMSLevelLabel.Text = "MS Levels:";
             // 
@@ -1412,34 +1534,38 @@ namespace MSConvertGUI
             // 
             this.ZeroSamplesMSLevelSeperator.AutoSize = true;
             this.ZeroSamplesMSLevelSeperator.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.ZeroSamplesMSLevelSeperator.Location = new System.Drawing.Point(134, 55);
+            this.ZeroSamplesMSLevelSeperator.Location = new System.Drawing.Point(223, 85);
+            this.ZeroSamplesMSLevelSeperator.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.ZeroSamplesMSLevelSeperator.Name = "ZeroSamplesMSLevelSeperator";
-            this.ZeroSamplesMSLevelSeperator.Size = new System.Drawing.Size(15, 20);
+            this.ZeroSamplesMSLevelSeperator.Size = new System.Drawing.Size(22, 29);
             this.ZeroSamplesMSLevelSeperator.TabIndex = 26;
             this.ZeroSamplesMSLevelSeperator.Text = "-";
             // 
             // ZeroSamplesMSLevelHigh
             // 
-            this.ZeroSamplesMSLevelHigh.Location = new System.Drawing.Point(151, 57);
+            this.ZeroSamplesMSLevelHigh.Location = new System.Drawing.Point(252, 88);
+            this.ZeroSamplesMSLevelHigh.Margin = new System.Windows.Forms.Padding(8);
             this.ZeroSamplesMSLevelHigh.Name = "ZeroSamplesMSLevelHigh";
-            this.ZeroSamplesMSLevelHigh.Size = new System.Drawing.Size(37, 20);
+            this.ZeroSamplesMSLevelHigh.Size = new System.Drawing.Size(59, 26);
             this.ZeroSamplesMSLevelHigh.TabIndex = 28;
             this.ZeroSamplesMSLevelHigh.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumTextBox_KeyPress);
             // 
             // ZeroSamplesMSLevelLow
             // 
-            this.ZeroSamplesMSLevelLow.Location = new System.Drawing.Point(95, 57);
+            this.ZeroSamplesMSLevelLow.Location = new System.Drawing.Point(158, 88);
+            this.ZeroSamplesMSLevelLow.Margin = new System.Windows.Forms.Padding(8);
             this.ZeroSamplesMSLevelLow.Name = "ZeroSamplesMSLevelLow";
-            this.ZeroSamplesMSLevelLow.Size = new System.Drawing.Size(37, 20);
+            this.ZeroSamplesMSLevelLow.Size = new System.Drawing.Size(59, 26);
             this.ZeroSamplesMSLevelLow.TabIndex = 27;
             this.ZeroSamplesMSLevelLow.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumTextBox_KeyPress);
             // 
             // RemoveFilterButton
             // 
             this.RemoveFilterButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.RemoveFilterButton.Location = new System.Drawing.Point(273, 234);
+            this.RemoveFilterButton.Location = new System.Drawing.Point(452, 360);
+            this.RemoveFilterButton.Margin = new System.Windows.Forms.Padding(5);
             this.RemoveFilterButton.Name = "RemoveFilterButton";
-            this.RemoveFilterButton.Size = new System.Drawing.Size(58, 23);
+            this.RemoveFilterButton.Size = new System.Drawing.Size(97, 35);
             this.RemoveFilterButton.TabIndex = 11;
             this.RemoveFilterButton.Text = "Remove";
             this.RemoveFilterButton.UseVisualStyleBackColor = true;
@@ -1448,9 +1574,10 @@ namespace MSConvertGUI
             // AddFilterButton
             // 
             this.AddFilterButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.AddFilterButton.Location = new System.Drawing.Point(214, 234);
+            this.AddFilterButton.Location = new System.Drawing.Point(354, 360);
+            this.AddFilterButton.Margin = new System.Windows.Forms.Padding(5);
             this.AddFilterButton.Name = "AddFilterButton";
-            this.AddFilterButton.Size = new System.Drawing.Size(53, 23);
+            this.AddFilterButton.Size = new System.Drawing.Size(88, 35);
             this.AddFilterButton.TabIndex = 10;
             this.AddFilterButton.Text = "Add";
             this.AddFilterButton.UseVisualStyleBackColor = true;
@@ -1459,9 +1586,10 @@ namespace MSConvertGUI
             // TextFileRadio
             // 
             this.TextFileRadio.AutoSize = true;
-            this.TextFileRadio.Location = new System.Drawing.Point(147, 12);
+            this.TextFileRadio.Location = new System.Drawing.Point(245, 18);
+            this.TextFileRadio.Margin = new System.Windows.Forms.Padding(5);
             this.TextFileRadio.Name = "TextFileRadio";
-            this.TextFileRadio.Size = new System.Drawing.Size(103, 17);
+            this.TextFileRadio.Size = new System.Drawing.Size(162, 24);
             this.TextFileRadio.TabIndex = 2;
             this.TextFileRadio.Text = "File of file names";
             this.TextFileRadio.UseVisualStyleBackColor = true;
@@ -1470,9 +1598,10 @@ namespace MSConvertGUI
             // 
             this.FileListRadio.AutoSize = true;
             this.FileListRadio.Checked = true;
-            this.FileListRadio.Location = new System.Drawing.Point(64, 12);
+            this.FileListRadio.Location = new System.Drawing.Point(107, 18);
+            this.FileListRadio.Margin = new System.Windows.Forms.Padding(5);
             this.FileListRadio.Name = "FileListRadio";
-            this.FileListRadio.Size = new System.Drawing.Size(77, 17);
+            this.FileListRadio.Size = new System.Drawing.Size(122, 24);
             this.FileListRadio.TabIndex = 1;
             this.FileListRadio.TabStop = true;
             this.FileListRadio.Text = "List of Files";
@@ -1485,26 +1614,29 @@ namespace MSConvertGUI
             this.OutputFormatBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.OutputFormatBox.FormattingEnabled = true;
             this.OutputFormatBox.Items.AddRange(new object[] { "mzML", "mzXML", "mz5", "mgf", "text", "ms1", "cms1", "ms2", "cms2" });
-            this.OutputFormatBox.Location = new System.Drawing.Point(94, 3);
+            this.OutputFormatBox.Location = new System.Drawing.Point(180, 5);
+            this.OutputFormatBox.Margin = new System.Windows.Forms.Padding(5);
             this.OutputFormatBox.Name = "OutputFormatBox";
-            this.OutputFormatBox.Size = new System.Drawing.Size(55, 21);
+            this.OutputFormatBox.Size = new System.Drawing.Size(89, 28);
             this.OutputFormatBox.TabIndex = 1;
             this.OutputFormatBox.SelectedIndexChanged += new System.EventHandler(this.OutputFormatBox_SelectedIndexChanged);
             // 
             // FormatLabel
             // 
             this.FormatLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.FormatLabel.Location = new System.Drawing.Point(3, 7);
+            this.FormatLabel.Location = new System.Drawing.Point(28, 9);
+            this.FormatLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.FormatLabel.Name = "FormatLabel";
-            this.FormatLabel.Size = new System.Drawing.Size(85, 13);
+            this.FormatLabel.Size = new System.Drawing.Size(142, 20);
             this.FormatLabel.TabIndex = 13;
             this.FormatLabel.Text = "Output format:";
             // 
             // BrowseFileButton
             // 
-            this.BrowseFileButton.Location = new System.Drawing.Point(231, 33);
+            this.BrowseFileButton.Location = new System.Drawing.Point(385, 51);
+            this.BrowseFileButton.Margin = new System.Windows.Forms.Padding(5);
             this.BrowseFileButton.Name = "BrowseFileButton";
-            this.BrowseFileButton.Size = new System.Drawing.Size(50, 23);
+            this.BrowseFileButton.Size = new System.Drawing.Size(83, 35);
             this.BrowseFileButton.TabIndex = 4;
             this.BrowseFileButton.Text = "Browse";
             this.BrowseFileButton.UseVisualStyleBackColor = true;
@@ -1513,9 +1645,10 @@ namespace MSConvertGUI
             // OutputBrowse
             // 
             this.OutputBrowse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.OutputBrowse.Location = new System.Drawing.Point(243, 206);
+            this.OutputBrowse.Location = new System.Drawing.Point(392, 317);
+            this.OutputBrowse.Margin = new System.Windows.Forms.Padding(5);
             this.OutputBrowse.Name = "OutputBrowse";
-            this.OutputBrowse.Size = new System.Drawing.Size(66, 23);
+            this.OutputBrowse.Size = new System.Drawing.Size(110, 35);
             this.OutputBrowse.TabIndex = 2;
             this.OutputBrowse.Text = "Browse";
             this.OutputBrowse.UseVisualStyleBackColor = true;
@@ -1525,9 +1658,10 @@ namespace MSConvertGUI
             // 
             this.OutputLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.OutputLabel.AutoSize = true;
-            this.OutputLabel.Location = new System.Drawing.Point(0, 192);
+            this.OutputLabel.Location = new System.Drawing.Point(0, 295);
+            this.OutputLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.OutputLabel.Name = "OutputLabel";
-            this.OutputLabel.Size = new System.Drawing.Size(87, 13);
+            this.OutputLabel.Size = new System.Drawing.Size(138, 20);
             this.OutputLabel.TabIndex = 16;
             this.OutputLabel.Text = "Output Directory:";
             // 
@@ -1536,9 +1670,10 @@ namespace MSConvertGUI
             this.OutputBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
             this.OutputBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.OutputBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystemDirectories;
-            this.OutputBox.Location = new System.Drawing.Point(1, 208);
+            this.OutputBox.Location = new System.Drawing.Point(2, 320);
+            this.OutputBox.Margin = new System.Windows.Forms.Padding(5);
             this.OutputBox.Name = "OutputBox";
-            this.OutputBox.Size = new System.Drawing.Size(233, 20);
+            this.OutputBox.Size = new System.Drawing.Size(373, 26);
             this.OutputBox.TabIndex = 1;
             // 
             // PrecisionLabel
@@ -1546,9 +1681,10 @@ namespace MSConvertGUI
             this.PrecisionLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.PrecisionLabel.AutoSize = true;
             this.OptionsTableLayoutPanel.SetColumnSpan(this.PrecisionLabel, 2);
-            this.PrecisionLabel.Location = new System.Drawing.Point(18, 32);
+            this.PrecisionLabel.Location = new System.Drawing.Point(62, 45);
+            this.PrecisionLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.PrecisionLabel.Name = "PrecisionLabel";
-            this.PrecisionLabel.Size = new System.Drawing.Size(131, 13);
+            this.PrecisionLabel.Size = new System.Drawing.Size(207, 20);
             this.PrecisionLabel.TabIndex = 18;
             this.PrecisionLabel.Text = "Binary encoding precision:";
             // 
@@ -1558,9 +1694,10 @@ namespace MSConvertGUI
             this.SrmSpectraBox.AutoSize = true;
             this.SrmSpectraBox.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.OptionsTableLayoutPanel.SetColumnSpan(this.SrmSpectraBox, 2);
-            this.SrmSpectraBox.Location = new System.Drawing.Point(178, 191);
+            this.SrmSpectraBox.Location = new System.Drawing.Point(320, 281);
+            this.SrmSpectraBox.Margin = new System.Windows.Forms.Padding(5);
             this.SrmSpectraBox.Name = "SrmSpectraBox";
-            this.SrmSpectraBox.Size = new System.Drawing.Size(105, 17);
+            this.SrmSpectraBox.Size = new System.Drawing.Size(161, 24);
             this.SrmSpectraBox.TabIndex = 29;
             this.SrmSpectraBox.Text = "SRM as spectra:";
             this.SrmSpectraBox.UseVisualStyleBackColor = true;
@@ -1571,9 +1708,10 @@ namespace MSConvertGUI
             this.SimSpectraBox.AutoSize = true;
             this.SimSpectraBox.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.OptionsTableLayoutPanel.SetColumnSpan(this.SimSpectraBox, 2);
-            this.SimSpectraBox.Location = new System.Drawing.Point(49, 191);
+            this.SimSpectraBox.Location = new System.Drawing.Point(116, 281);
+            this.SimSpectraBox.Margin = new System.Windows.Forms.Padding(5);
             this.SimSpectraBox.Name = "SimSpectraBox";
-            this.SimSpectraBox.Size = new System.Drawing.Size(100, 17);
+            this.SimSpectraBox.Size = new System.Drawing.Size(153, 24);
             this.SimSpectraBox.TabIndex = 28;
             this.SimSpectraBox.Text = "SIM as spectra:";
             this.SimSpectraBox.UseVisualStyleBackColor = true;
@@ -1584,9 +1722,10 @@ namespace MSConvertGUI
             this.CombineIonMobilitySpectraBox.AutoSize = true;
             this.CombineIonMobilitySpectraBox.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.OptionsTableLayoutPanel.SetColumnSpan(this.CombineIonMobilitySpectraBox, 4);
-            this.CombineIonMobilitySpectraBox.Location = new System.Drawing.Point(128, 168);
+            this.CombineIonMobilitySpectraBox.Location = new System.Drawing.Point(236, 247);
+            this.CombineIonMobilitySpectraBox.Margin = new System.Windows.Forms.Padding(5);
             this.CombineIonMobilitySpectraBox.Name = "CombineIonMobilitySpectraBox";
-            this.CombineIonMobilitySpectraBox.Size = new System.Drawing.Size(155, 17);
+            this.CombineIonMobilitySpectraBox.Size = new System.Drawing.Size(245, 24);
             this.CombineIonMobilitySpectraBox.TabIndex = 27;
             this.CombineIonMobilitySpectraBox.Text = "Combine ion mobility scans:";
             this.CombineIonMobilitySpectraBox.UseVisualStyleBackColor = true;
@@ -1597,9 +1736,10 @@ namespace MSConvertGUI
             this.NumpressSlofBox.AutoSize = true;
             this.NumpressSlofBox.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.OptionsTableLayoutPanel.SetColumnSpan(this.NumpressSlofBox, 4);
-            this.NumpressSlofBox.Location = new System.Drawing.Point(41, 122);
+            this.NumpressSlofBox.Location = new System.Drawing.Point(97, 179);
+            this.NumpressSlofBox.Margin = new System.Windows.Forms.Padding(5);
             this.NumpressSlofBox.Name = "NumpressSlofBox";
-            this.NumpressSlofBox.Size = new System.Drawing.Size(242, 17);
+            this.NumpressSlofBox.Size = new System.Drawing.Size(384, 24);
             this.NumpressSlofBox.TabIndex = 25;
             this.NumpressSlofBox.Text = "Use numpress short logged float compression:";
             this.NumpressSlofBox.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1612,9 +1752,10 @@ namespace MSConvertGUI
             this.NumpressLinearBox.AutoSize = true;
             this.NumpressLinearBox.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.OptionsTableLayoutPanel.SetColumnSpan(this.NumpressLinearBox, 4);
-            this.NumpressLinearBox.Location = new System.Drawing.Point(97, 99);
+            this.NumpressLinearBox.Location = new System.Drawing.Point(185, 145);
+            this.NumpressLinearBox.Margin = new System.Windows.Forms.Padding(5);
             this.NumpressLinearBox.Name = "NumpressLinearBox";
-            this.NumpressLinearBox.Size = new System.Drawing.Size(186, 17);
+            this.NumpressLinearBox.Size = new System.Drawing.Size(296, 24);
             this.NumpressLinearBox.TabIndex = 24;
             this.NumpressLinearBox.Text = "Use numpress linear compression:";
             this.NumpressLinearBox.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1626,9 +1767,10 @@ namespace MSConvertGUI
             this.NumpressPicBox.AutoSize = true;
             this.NumpressPicBox.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.OptionsTableLayoutPanel.SetColumnSpan(this.NumpressPicBox, 4);
-            this.NumpressPicBox.Location = new System.Drawing.Point(51, 145);
+            this.NumpressPicBox.Location = new System.Drawing.Point(113, 213);
+            this.NumpressPicBox.Margin = new System.Windows.Forms.Padding(5);
             this.NumpressPicBox.Name = "NumpressPicBox";
-            this.NumpressPicBox.Size = new System.Drawing.Size(232, 17);
+            this.NumpressPicBox.Size = new System.Drawing.Size(368, 24);
             this.NumpressPicBox.TabIndex = 26;
             this.NumpressPicBox.Text = "Use numpress positive integer compression:";
             this.NumpressPicBox.UseVisualStyleBackColor = true;
@@ -1642,9 +1784,10 @@ namespace MSConvertGUI
             this.MakeTPPCompatibleOutputButton.Checked = true;
             this.MakeTPPCompatibleOutputButton.CheckState = System.Windows.Forms.CheckState.Checked;
             this.OptionsTableLayoutPanel.SetColumnSpan(this.MakeTPPCompatibleOutputButton, 2);
-            this.MakeTPPCompatibleOutputButton.Location = new System.Drawing.Point(39, 76);
+            this.MakeTPPCompatibleOutputButton.Location = new System.Drawing.Point(99, 111);
+            this.MakeTPPCompatibleOutputButton.Margin = new System.Windows.Forms.Padding(5);
             this.MakeTPPCompatibleOutputButton.Name = "MakeTPPCompatibleOutputButton";
-            this.MakeTPPCompatibleOutputButton.Size = new System.Drawing.Size(110, 17);
+            this.MakeTPPCompatibleOutputButton.Size = new System.Drawing.Size(170, 24);
             this.MakeTPPCompatibleOutputButton.TabIndex = 7;
             this.MakeTPPCompatibleOutputButton.Text = "TPP compatibility:";
             this.MakeTPPCompatibleOutputButton.UseVisualStyleBackColor = true;
@@ -1657,9 +1800,10 @@ namespace MSConvertGUI
             this.UseZlibBox.Checked = true;
             this.UseZlibBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.OptionsTableLayoutPanel.SetColumnSpan(this.UseZlibBox, 2);
-            this.UseZlibBox.Location = new System.Drawing.Point(155, 53);
+            this.UseZlibBox.Location = new System.Drawing.Point(279, 77);
+            this.UseZlibBox.Margin = new System.Windows.Forms.Padding(5);
             this.UseZlibBox.Name = "UseZlibBox";
-            this.UseZlibBox.Size = new System.Drawing.Size(128, 17);
+            this.UseZlibBox.Size = new System.Drawing.Size(202, 24);
             this.UseZlibBox.TabIndex = 6;
             this.UseZlibBox.Text = "Use zlib compression:";
             this.UseZlibBox.UseVisualStyleBackColor = true;
@@ -1670,9 +1814,10 @@ namespace MSConvertGUI
             this.GzipBox.AutoSize = true;
             this.GzipBox.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.OptionsTableLayoutPanel.SetColumnSpan(this.GzipBox, 2);
-            this.GzipBox.Location = new System.Drawing.Point(178, 76);
+            this.GzipBox.Location = new System.Drawing.Point(323, 111);
+            this.GzipBox.Margin = new System.Windows.Forms.Padding(5);
             this.GzipBox.Name = "GzipBox";
-            this.GzipBox.Size = new System.Drawing.Size(105, 17);
+            this.GzipBox.Size = new System.Drawing.Size(158, 24);
             this.GzipBox.TabIndex = 8;
             this.GzipBox.Text = "Package in gzip:";
             this.GzipBox.UseVisualStyleBackColor = true;
@@ -1680,18 +1825,20 @@ namespace MSConvertGUI
             // OutputExtensionBox
             // 
             this.OutputExtensionBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.OutputExtensionBox.Location = new System.Drawing.Point(217, 3);
+            this.OutputExtensionBox.Location = new System.Drawing.Point(390, 6);
+            this.OutputExtensionBox.Margin = new System.Windows.Forms.Padding(5);
             this.OutputExtensionBox.Name = "OutputExtensionBox";
-            this.OutputExtensionBox.Size = new System.Drawing.Size(53, 20);
+            this.OutputExtensionBox.Size = new System.Drawing.Size(86, 26);
             this.OutputExtensionBox.TabIndex = 2;
             // 
             // OutputExtensionLabel
             // 
             this.OutputExtensionLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.OutputExtensionLabel.AutoSize = true;
-            this.OutputExtensionLabel.Location = new System.Drawing.Point(155, 7);
+            this.OutputExtensionLabel.Location = new System.Drawing.Point(293, 9);
+            this.OutputExtensionLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.OutputExtensionLabel.Name = "OutputExtensionLabel";
-            this.OutputExtensionLabel.Size = new System.Drawing.Size(56, 13);
+            this.OutputExtensionLabel.Size = new System.Drawing.Size(87, 20);
             this.OutputExtensionLabel.TabIndex = 23;
             this.OutputExtensionLabel.Text = "Extension:";
             // 
@@ -1703,9 +1850,10 @@ namespace MSConvertGUI
             this.WriteIndexBox.Checked = true;
             this.WriteIndexBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.OptionsTableLayoutPanel.SetColumnSpan(this.WriteIndexBox, 2);
-            this.WriteIndexBox.Location = new System.Drawing.Point(67, 53);
+            this.WriteIndexBox.Location = new System.Drawing.Point(145, 77);
+            this.WriteIndexBox.Margin = new System.Windows.Forms.Padding(5);
             this.WriteIndexBox.Name = "WriteIndexBox";
-            this.WriteIndexBox.Size = new System.Drawing.Size(82, 17);
+            this.WriteIndexBox.Size = new System.Drawing.Size(124, 24);
             this.WriteIndexBox.TabIndex = 5;
             this.WriteIndexBox.Text = "Write index:";
             this.WriteIndexBox.UseVisualStyleBackColor = true;
@@ -1714,9 +1862,10 @@ namespace MSConvertGUI
             // 
             this.Precision32.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.Precision32.AutoSize = true;
-            this.Precision32.Location = new System.Drawing.Point(217, 30);
+            this.Precision32.Location = new System.Drawing.Point(390, 43);
+            this.Precision32.Margin = new System.Windows.Forms.Padding(5);
             this.Precision32.Name = "Precision32";
-            this.Precision32.Size = new System.Drawing.Size(51, 17);
+            this.Precision32.Size = new System.Drawing.Size(76, 24);
             this.Precision32.TabIndex = 4;
             this.Precision32.Text = "32-bit";
             this.Precision32.UseVisualStyleBackColor = true;
@@ -1726,9 +1875,10 @@ namespace MSConvertGUI
             this.Precision64.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.Precision64.AutoSize = true;
             this.Precision64.Checked = true;
-            this.Precision64.Location = new System.Drawing.Point(160, 30);
+            this.Precision64.Location = new System.Drawing.Point(304, 43);
+            this.Precision64.Margin = new System.Windows.Forms.Padding(5);
             this.Precision64.Name = "Precision64";
-            this.Precision64.Size = new System.Drawing.Size(51, 17);
+            this.Precision64.Size = new System.Drawing.Size(76, 24);
             this.Precision64.TabIndex = 3;
             this.Precision64.TabStop = true;
             this.Precision64.Text = "64-bit";
@@ -1737,10 +1887,11 @@ namespace MSConvertGUI
             // PresetSaveButton
             // 
             this.PresetSaveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.PresetSaveButton.Location = new System.Drawing.Point(322, 619);
+            this.PresetSaveButton.Location = new System.Drawing.Point(537, 952);
+            this.PresetSaveButton.Margin = new System.Windows.Forms.Padding(5);
             this.PresetSaveButton.Menu = this.presetSaveButtonMenu;
             this.PresetSaveButton.Name = "PresetSaveButton";
-            this.PresetSaveButton.Size = new System.Drawing.Size(90, 23);
+            this.PresetSaveButton.Size = new System.Drawing.Size(150, 35);
             this.PresetSaveButton.TabIndex = 32;
             this.PresetSaveButton.Text = "Save Preset";
             this.PresetSaveButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1749,30 +1900,32 @@ namespace MSConvertGUI
             // 
             // presetSaveButtonMenu
             // 
+            this.presetSaveButtonMenu.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.presetSaveButtonMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.presetSaveAsButton, this.presetSetDefaultButton });
             this.presetSaveButtonMenu.Name = "presetSaveButtonMenu";
-            this.presetSaveButtonMenu.Size = new System.Drawing.Size(171, 48);
+            this.presetSaveButtonMenu.Size = new System.Drawing.Size(216, 60);
             // 
             // presetSaveAsButton
             // 
             this.presetSaveAsButton.Name = "presetSaveAsButton";
-            this.presetSaveAsButton.Size = new System.Drawing.Size(170, 22);
+            this.presetSaveAsButton.Size = new System.Drawing.Size(215, 28);
             this.presetSaveAsButton.Text = "Save Preset As...";
             this.presetSaveAsButton.Click += new System.EventHandler(this.presetSaveAsButton_Click);
             // 
             // presetSetDefaultButton
             // 
             this.presetSetDefaultButton.Name = "presetSetDefaultButton";
-            this.presetSetDefaultButton.Size = new System.Drawing.Size(170, 22);
+            this.presetSetDefaultButton.Size = new System.Drawing.Size(215, 28);
             this.presetSetDefaultButton.Text = "Set as Default";
             this.presetSetDefaultButton.Click += new System.EventHandler(this.presetSetDefaultButton_Click);
             // 
             // AboutButton
             // 
             this.AboutButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.AboutButton.Location = new System.Drawing.Point(741, 28);
+            this.AboutButton.Location = new System.Drawing.Point(1235, 43);
+            this.AboutButton.Margin = new System.Windows.Forms.Padding(5);
             this.AboutButton.Name = "AboutButton";
-            this.AboutButton.Size = new System.Drawing.Size(131, 23);
+            this.AboutButton.Size = new System.Drawing.Size(218, 35);
             this.AboutButton.TabIndex = 33;
             this.AboutButton.Text = "About MSConvert";
             this.AboutButton.UseVisualStyleBackColor = true;
@@ -1783,12 +1936,14 @@ namespace MSConvertGUI
             this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn1.FillWeight = 50F;
             this.dataGridViewTextBoxColumn1.HeaderText = "Filter";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn2.HeaderText = "Parameters";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
             // networkResourceComboBox
@@ -1796,9 +1951,10 @@ namespace MSConvertGUI
             this.networkResourceComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.networkResourceComboBox.FormattingEnabled = true;
             this.networkResourceComboBox.Items.AddRange(new object[] { "UNIFI" });
-            this.networkResourceComboBox.Location = new System.Drawing.Point(326, 35);
+            this.networkResourceComboBox.Location = new System.Drawing.Point(543, 54);
+            this.networkResourceComboBox.Margin = new System.Windows.Forms.Padding(5);
             this.networkResourceComboBox.Name = "networkResourceComboBox";
-            this.networkResourceComboBox.Size = new System.Drawing.Size(167, 21);
+            this.networkResourceComboBox.Size = new System.Drawing.Size(276, 28);
             this.networkResourceComboBox.TabIndex = 34;
             this.networkResourceComboBox.DropDown += new System.EventHandler(this.networkResourceComboBox_DropDown);
             this.networkResourceComboBox.SelectedIndexChanged += new System.EventHandler(this.networkResourceComboBox_SelectedIndexChanged);
@@ -1808,9 +1964,10 @@ namespace MSConvertGUI
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 624);
+            this.label3.Location = new System.Drawing.Point(20, 960);
+            this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 13);
+            this.label3.Size = new System.Drawing.Size(72, 20);
             this.label3.TabIndex = 27;
             this.label3.Text = "Presets:";
             // 
@@ -1821,9 +1978,10 @@ namespace MSConvertGUI
             this.presetComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.presetComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.presetComboBox.FormattingEnabled = true;
-            this.presetComboBox.Location = new System.Drawing.Point(58, 619);
+            this.presetComboBox.Location = new System.Drawing.Point(97, 952);
+            this.presetComboBox.Margin = new System.Windows.Forms.Padding(5);
             this.presetComboBox.Name = "presetComboBox";
-            this.presetComboBox.Size = new System.Drawing.Size(247, 21);
+            this.presetComboBox.Size = new System.Drawing.Size(409, 28);
             this.presetComboBox.TabIndex = 35;
             this.presetComboBox.SelectedIndexChanged += new System.EventHandler(this.presetComboBox_SelectedIndexChanged);
             // 
@@ -1831,9 +1989,10 @@ namespace MSConvertGUI
             // 
             this.filesToConvertInParallelLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.filesToConvertInParallelLabel.AutoSize = true;
-            this.filesToConvertInParallelLabel.Location = new System.Drawing.Point(599, 627);
+            this.filesToConvertInParallelLabel.Location = new System.Drawing.Point(998, 965);
+            this.filesToConvertInParallelLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.filesToConvertInParallelLabel.Name = "filesToConvertInParallelLabel";
-            this.filesToConvertInParallelLabel.Size = new System.Drawing.Size(129, 13);
+            this.filesToConvertInParallelLabel.Size = new System.Drawing.Size(206, 20);
             this.filesToConvertInParallelLabel.TabIndex = 20;
             this.filesToConvertInParallelLabel.Text = "Files to convert in parallel:";
             // 
@@ -1844,11 +2003,12 @@ namespace MSConvertGUI
             settings1.NumFilesToConvertInParallel = new decimal(new int[] { 1, 0, 0, 0 });
             settings1.SettingsKey = "";
             this.FilesToConvertInParallelUpDown.DataBindings.Add(new System.Windows.Forms.Binding("Value", settings1, "NumFilesToConvertInParallel", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.FilesToConvertInParallelUpDown.Location = new System.Drawing.Point(747, 622);
+            this.FilesToConvertInParallelUpDown.Location = new System.Drawing.Point(1245, 957);
+            this.FilesToConvertInParallelUpDown.Margin = new System.Windows.Forms.Padding(5);
             this.FilesToConvertInParallelUpDown.Maximum = new decimal(new int[] { 64, 0, 0, 0 });
             this.FilesToConvertInParallelUpDown.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             this.FilesToConvertInParallelUpDown.Name = "FilesToConvertInParallelUpDown";
-            this.FilesToConvertInParallelUpDown.Size = new System.Drawing.Size(39, 20);
+            this.FilesToConvertInParallelUpDown.Size = new System.Drawing.Size(65, 26);
             this.FilesToConvertInParallelUpDown.TabIndex = 36;
             this.FilesToConvertInParallelUpDown.Value = new decimal(new int[] { 1, 0, 0, 0 });
             this.FilesToConvertInParallelUpDown.ValueChanged += new System.EventHandler(this.FilesToConvertInParallelUpDown_ValueChanged);
@@ -1856,9 +2016,10 @@ namespace MSConvertGUI
             // showCommandLine
             // 
             this.showCommandLine.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.showCommandLine.Location = new System.Drawing.Point(418, 619);
+            this.showCommandLine.Location = new System.Drawing.Point(697, 952);
+            this.showCommandLine.Margin = new System.Windows.Forms.Padding(5);
             this.showCommandLine.Name = "showCommandLine";
-            this.showCommandLine.Size = new System.Drawing.Size(123, 23);
+            this.showCommandLine.Size = new System.Drawing.Size(205, 35);
             this.showCommandLine.TabIndex = 37;
             this.showCommandLine.Text = "Show Command Line";
             this.showCommandLine.UseVisualStyleBackColor = true;
@@ -1867,7 +2028,8 @@ namespace MSConvertGUI
             // splitContainer1
             // 
             this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
-            this.splitContainer1.Location = new System.Drawing.Point(12, 90);
+            this.splitContainer1.Location = new System.Drawing.Point(20, 138);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(5);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -1885,18 +2047,21 @@ namespace MSConvertGUI
             this.splitContainer1.Panel2.Controls.Add(this.FilterGB);
             this.splitContainer1.Panel2.Controls.Add(this.AddFilterButton);
             this.splitContainer1.Panel2.Controls.Add(this.RemoveFilterButton);
-            this.splitContainer1.Size = new System.Drawing.Size(860, 523);
-            this.splitContainer1.SplitterDistance = 310;
+            this.splitContainer1.Size = new System.Drawing.Size(1433, 805);
+            this.splitContainer1.SplitterDistance = 504;
+            this.splitContainer1.SplitterWidth = 7;
             this.splitContainer1.TabIndex = 38;
             // 
             // OptionsGB
             // 
             this.OptionsGB.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
             this.OptionsGB.Controls.Add(this.OptionsTableLayoutPanel);
-            this.OptionsGB.Location = new System.Drawing.Point(1, 235);
-            this.OptionsGB.MinimumSize = new System.Drawing.Size(308, 238);
+            this.OptionsGB.Location = new System.Drawing.Point(2, 362);
+            this.OptionsGB.Margin = new System.Windows.Forms.Padding(5);
+            this.OptionsGB.MinimumSize = new System.Drawing.Size(513, 366);
             this.OptionsGB.Name = "OptionsGB";
-            this.OptionsGB.Size = new System.Drawing.Size(308, 288);
+            this.OptionsGB.Padding = new System.Windows.Forms.Padding(5);
+            this.OptionsGB.Size = new System.Drawing.Size(513, 443);
             this.OptionsGB.TabIndex = 8;
             this.OptionsGB.TabStop = false;
             this.OptionsGB.Text = "Options";
@@ -1910,7 +2075,6 @@ namespace MSConvertGUI
             this.OptionsTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.OptionsTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.OptionsTableLayoutPanel.Controls.Add(this.SrmSpectraBox, 2, 8);
-            this.OptionsTableLayoutPanel.Controls.Add(this.OutputFormatBox, 1, 0);
             this.OptionsTableLayoutPanel.Controls.Add(this.SimSpectraBox, 0, 8);
             this.OptionsTableLayoutPanel.Controls.Add(this.FormatLabel, 0, 0);
             this.OptionsTableLayoutPanel.Controls.Add(this.CombineIonMobilitySpectraBox, 0, 7);
@@ -1926,11 +2090,20 @@ namespace MSConvertGUI
             this.OptionsTableLayoutPanel.Controls.Add(this.WriteIndexBox, 0, 2);
             this.OptionsTableLayoutPanel.Controls.Add(this.NumpressLinearBox, 0, 4);
             this.OptionsTableLayoutPanel.Controls.Add(this.NumpressSlofBox, 0, 5);
+            this.OptionsTableLayoutPanel.Controls.Add(this.label14, 0, 12);
+            this.OptionsTableLayoutPanel.Controls.Add(this.OutputFormatBox, 1, 0);
+            this.OptionsTableLayoutPanel.Controls.Add(this.label15, 2, 11);
+            this.OptionsTableLayoutPanel.Controls.Add(this.label16, 2, 12);
+            this.OptionsTableLayoutPanel.Controls.Add(this.label10, 0, 11);
+            this.OptionsTableLayoutPanel.Controls.Add(this.cbMzLossError, 3, 11);
+            this.OptionsTableLayoutPanel.Controls.Add(this.cbIntLossyError, 3, 12);
+            this.OptionsTableLayoutPanel.Controls.Add(this.cbIntTruncMode, 1, 12);
+            this.OptionsTableLayoutPanel.Controls.Add(this.cbMzTruncMode, 1, 11);
             this.OptionsTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.OptionsTableLayoutPanel.Location = new System.Drawing.Point(3, 16);
-            this.OptionsTableLayoutPanel.Margin = new System.Windows.Forms.Padding(3, 3, 0, 0);
+            this.OptionsTableLayoutPanel.Location = new System.Drawing.Point(5, 24);
+            this.OptionsTableLayoutPanel.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
             this.OptionsTableLayoutPanel.Name = "OptionsTableLayoutPanel";
-            this.OptionsTableLayoutPanel.RowCount = 11;
+            this.OptionsTableLayoutPanel.RowCount = 14;
             this.OptionsTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.OptionsTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.OptionsTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -1942,14 +2115,107 @@ namespace MSConvertGUI
             this.OptionsTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.OptionsTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.OptionsTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.OptionsTableLayoutPanel.Size = new System.Drawing.Size(302, 269);
+            this.OptionsTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
+            this.OptionsTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
+            this.OptionsTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
+            this.OptionsTableLayoutPanel.Size = new System.Drawing.Size(503, 414);
             this.OptionsTableLayoutPanel.TabIndex = 8;
+            // 
+            // label14
+            // 
+            this.label14.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label14.Location = new System.Drawing.Point(5, 359);
+            this.label14.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(165, 22);
+            this.label14.TabIndex = 30;
+            this.label14.Text = "intensity: trunc mode";
+            // 
+            // label15
+            // 
+            this.label15.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label15.Location = new System.Drawing.Point(279, 318);
+            this.label15.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(101, 25);
+            this.label15.TabIndex = 32;
+            this.label15.Text = "lossy error:";
+            // 
+            // label16
+            // 
+            this.label16.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label16.Location = new System.Drawing.Point(279, 358);
+            this.label16.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(101, 25);
+            this.label16.TabIndex = 33;
+            this.label16.Text = "lossy error:";
+            // 
+            // label10
+            // 
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label10.Location = new System.Drawing.Point(37, 318);
+            this.label10.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(133, 25);
+            this.label10.TabIndex = 14;
+            this.label10.Text = "m/z: trunc mode";
+            // 
+            // cbMzLossError
+            // 
+            this.cbMzLossError.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cbMzLossError.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbMzLossError.Enabled = false;
+            this.cbMzLossError.FormattingEnabled = true;
+            this.cbMzLossError.Location = new System.Drawing.Point(390, 316);
+            this.cbMzLossError.Margin = new System.Windows.Forms.Padding(5);
+            this.cbMzLossError.Name = "cbMzLossError";
+            this.cbMzLossError.Size = new System.Drawing.Size(89, 28);
+            this.cbMzLossError.TabIndex = 34;
+            // 
+            // cbIntLossyError
+            // 
+            this.cbIntLossyError.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cbIntLossyError.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbIntLossyError.Enabled = false;
+            this.cbIntLossyError.FormattingEnabled = true;
+            this.cbIntLossyError.Location = new System.Drawing.Point(390, 356);
+            this.cbIntLossyError.Margin = new System.Windows.Forms.Padding(5);
+            this.cbIntLossyError.Name = "cbIntLossyError";
+            this.cbIntLossyError.Size = new System.Drawing.Size(89, 28);
+            this.cbIntLossyError.TabIndex = 35;
+            // 
+            // cbIntTruncMode
+            // 
+            this.cbIntTruncMode.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cbIntTruncMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbIntTruncMode.FormattingEnabled = true;
+            this.cbIntTruncMode.Items.AddRange(new object[] { "None", "Relative" });
+            this.cbIntTruncMode.Location = new System.Drawing.Point(180, 357);
+            this.cbIntTruncMode.Margin = new System.Windows.Forms.Padding(5);
+            this.cbIntTruncMode.Name = "cbIntTruncMode";
+            this.cbIntTruncMode.Size = new System.Drawing.Size(89, 28);
+            this.cbIntTruncMode.TabIndex = 31;
+            this.cbIntTruncMode.SelectedIndexChanged += new System.EventHandler(this.cbIntTruncMode_SelectedIndexChanged);
+            // 
+            // cbMzTruncMode
+            // 
+            this.cbMzTruncMode.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cbMzTruncMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbMzTruncMode.FormattingEnabled = true;
+            this.cbMzTruncMode.Items.AddRange(new object[] { "None", "Absolute" });
+            this.cbMzTruncMode.Location = new System.Drawing.Point(180, 317);
+            this.cbMzTruncMode.Margin = new System.Windows.Forms.Padding(5);
+            this.cbMzTruncMode.Name = "cbMzTruncMode";
+            this.cbMzTruncMode.Size = new System.Drawing.Size(89, 28);
+            this.cbMzTruncMode.TabIndex = 13;
+            this.cbMzTruncMode.SelectedIndexChanged += new System.EventHandler(this.cbMzTruncMode_SelectedIndexChanged);
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 654);
+            this.ClientSize = new System.Drawing.Size(1473, 1006);
             this.Controls.Add(this.showCommandLine);
             this.Controls.Add(this.filesToConvertInParallelLabel);
             this.Controls.Add(this.FilesToConvertInParallelUpDown);
@@ -1969,7 +2235,8 @@ namespace MSConvertGUI
             this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(900, 623);
+            this.Margin = new System.Windows.Forms.Padding(5);
+            this.MinimumSize = new System.Drawing.Size(1485, 928);
             this.Name = "MainForm";
             this.Text = "MSConvert";
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -2175,6 +2442,14 @@ namespace MSConvertGUI
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.TableLayoutPanel OptionsTableLayoutPanel;
         private System.Windows.Forms.GroupBox OptionsGB;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.ComboBox cbMzTruncMode;
+        private System.Windows.Forms.ComboBox cbIntTruncMode;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.ComboBox cbMzLossError;
+        private System.Windows.Forms.ComboBox cbIntLossyError;
     }
 }
 

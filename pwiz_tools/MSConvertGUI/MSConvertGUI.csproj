@@ -86,11 +86,7 @@
       <HintPath>binaries\x64\protobuf-net.dll</HintPath>
     </Reference>
     <Reference Include="pwiz_bindings_cli">
-      <HintPath>binaries\pwiz_bindings_cli.dll</HintPath>
-    </Reference>
-    <Reference Include="pwiz_bindings_cli, Version=0.0.0.0, Culture=neutral, processorArchitecture=AMD64">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\build-nt-x86\msvc-debug-x86_64\pwiz_bindings_cli.dll</HintPath>
+      <HintPath>ImportLibs\pwiz_bindings_cli.dll</HintPath>
     </Reference>
     <Reference Include="STL_Containers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e1b14cb78f1752cf, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

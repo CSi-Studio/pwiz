@@ -244,6 +244,10 @@ namespace MSConvertGUI
             networkResourceComboBox.DisplayMember = "DisplayName";
             networkResourceComboBox.Items.Insert(0, placeholder);
             networkResourceComboBox.SelectedItem = placeholder;
+            cbMzTruncMode.SelectedIndex = 0;
+            cbIntTruncMode.SelectedIndex = 0;
+            cbMzLossError.Enabled = false;
+            cbIntLossyError.Enabled = false;
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
@@ -1443,6 +1447,44 @@ namespace MSConvertGUI
                 "Command-line", MessageBoxButtons.OKCancel))
                 return;
             Clipboard.SetText(cmdLine);
+        }
+
+        string[] absoluteMzErrors = {"0.00001", "0.00002","0.00005","0.0001","0.001" };
+        string[] relativeIntensityErrors = {"0.0002","0.002","0.008","0.02","0.2" };
+        private void cbMzTruncMode_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbMzLossError.Items.Clear();
+            switch (cbMzTruncMode.SelectedIndex)
+            {
+                case 0: //none
+                    cbMzLossError.Enabled = false;
+                    break;
+                case 1: //absolute
+                    cbMzLossError.Enabled = true;
+                    cbMzLossError.Items.AddRange(absoluteMzErrors);
+                    cbMzLossError.SelectedIndex = 0;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void cbIntTruncMode_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbIntLossyError.Items.Clear();
+            switch (cbMzTruncMode.SelectedIndex)
+            {
+                case 0: //none
+                    cbIntLossyError.Enabled = false;
+                    break;
+                case 1: //relative
+                    cbIntLossyError.Enabled = true;
+                    cbIntLossyError.Items.AddRange(relativeIntensityErrors);
+                    cbIntLossyError.SelectedIndex = 0;
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }
