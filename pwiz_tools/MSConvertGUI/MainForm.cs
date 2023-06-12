@@ -820,6 +820,9 @@ namespace MSConvertGUI
                     commandLine.Append(tppline);
             }
 
+            commandLine.Append("--mzTrunc|" + cbMzTruncMode.SelectedItem + "|" + cbMzLossError.SelectedItem + "|");
+            commandLine.Append("--intTrunc|" + cbIntTruncMode.SelectedItem + "|" + cbIntLossyError.SelectedItem + "|");
+
             return commandLine.ToString();
         }
 
@@ -839,7 +842,7 @@ namespace MSConvertGUI
             SimSpectraBox.Checked = (commandLine.IndexOf("--simAsSpectra") >= 0);
             SrmSpectraBox.Checked = (commandLine.IndexOf("--srmAsSpectra") >= 0);
             string OutputExtension = "";
-
+            
             OutputFormatBox.Text = "mzML";
             FilterDGV.Rows.Clear();
 
@@ -860,7 +863,7 @@ namespace MSConvertGUI
                     case "--ms2":
                     case "--cms2":
                         OutputFormatBox.Text = words[i].Substring(2);
-                        break;
+                        break; 
                     case "--filter":
                         var space = words[++i].IndexOf(' ');
                         string filterName = words[i].Substring(0, space);
@@ -880,6 +883,14 @@ namespace MSConvertGUI
                     case "--simAsSpectra":
                     case "--srmAsSpectra":
                         break; // already handled these booleans above
+                    case "--mzTrunc":
+                        cbMzTruncMode.SelectedItem = words[++i];
+                        cbMzLossError.SelectedItem = words[++i];
+                        break;
+                    case "--intTrunc":
+                        cbIntTruncMode.SelectedItem = words[++i];
+                        cbIntLossyError.SelectedItem = words[++i];
+                        break;
                     case "":
                         break; // just that trailing "|"
                     default:

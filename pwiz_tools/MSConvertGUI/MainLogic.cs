@@ -240,6 +240,46 @@ namespace MSConvertGUI
                     case "--ddaProcessing":
                         config.ReaderConfig.ddaProcessing = true;
                         break;
+                    case "--mzTrunc":
+                        switch (commandList[++x])
+                        {
+                            case "Absolute":
+                                config.WriteConfig.mzTruncationMode = MSDataFile.TruncationMode.Trunc_Absolute;
+                                config.WriteConfig.mzPrecision = Double.Parse(commandList[++x]);
+                                break;
+                            case "Relative":
+                                config.WriteConfig.mzTruncationMode = MSDataFile.TruncationMode.Trunc_Relative;
+                                config.WriteConfig.mzPrecision = Double.Parse(commandList[++x]);
+                                break;
+                            case "None":
+                                config.WriteConfig.mzTruncationMode = MSDataFile.TruncationMode.Trunc_None;
+                                break;
+                            default:
+                                config.WriteConfig.mzTruncationMode = MSDataFile.TruncationMode.Trunc_None;
+                                break;
+                        }
+                        
+                        break;
+                    case "--intTrunc":
+                        switch (commandList[++x])
+                        {
+                            case "Absolute":
+                                config.WriteConfig.intTruncationMode = MSDataFile.TruncationMode.Trunc_Absolute;
+                                config.WriteConfig.intPrecision = Double.Parse(commandList[++x]);
+                                break;
+                            case "Relative":
+                                config.WriteConfig.intTruncationMode = MSDataFile.TruncationMode.Trunc_Relative;
+                                config.WriteConfig.intPrecision = Double.Parse(commandList[++x]);
+                                break;
+                            case "None":
+                                config.WriteConfig.intTruncationMode = MSDataFile.TruncationMode.Trunc_None;
+                                break;
+                            default:
+                                config.WriteConfig.intTruncationMode = MSDataFile.TruncationMode.Trunc_None;
+                                break;
+                        }
+                        
+                        break;
                     default:
                         config.Filenames.Add(commandList[x]);
                         break;
