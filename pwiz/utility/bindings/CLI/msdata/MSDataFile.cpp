@@ -135,9 +135,8 @@ static void translateConfig(MSDataFile::WriteConfig^ config, b::MSDataFile::Writ
     config2.binaryDataEncoderConfig.numpressSlofErrorTolerance = config->numpressSlofErrorTolerance;
     config2.binaryDataEncoderConfig.mzTruncationMode = (b::BinaryDataEncoder::TruncationMode) config->mzTruncationMode;
     config2.binaryDataEncoderConfig.intTruncationMode = (b::BinaryDataEncoder::TruncationMode) config->intTruncationMode;
-    config2.binaryDataEncoderConfig.mzPrecision = config->mzPrecision;
-    config2.binaryDataEncoderConfig.intPrecision = config->intPrecision;
-    
+    config2.binaryDataEncoderConfig.mzLossyError = config->mzLossyError;
+    config2.binaryDataEncoderConfig.intLossyError = config->intLossyError;
 }
 
 void MSDataFile::write(MSData^ msd,

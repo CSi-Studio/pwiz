@@ -245,11 +245,11 @@ namespace MSConvertGUI
                         {
                             case "Absolute":
                                 config.WriteConfig.mzTruncationMode = MSDataFile.TruncationMode.Trunc_Absolute;
-                                config.WriteConfig.mzPrecision = Double.Parse(commandList[++x]);
+                                config.WriteConfig.mzLossyError = Double.Parse(commandList[++x]);
                                 break;
                             case "Relative":
                                 config.WriteConfig.mzTruncationMode = MSDataFile.TruncationMode.Trunc_Relative;
-                                config.WriteConfig.mzPrecision = Double.Parse(commandList[++x]);
+                                config.WriteConfig.mzLossyError = Double.Parse(commandList[++x]);
                                 break;
                             case "None":
                                 config.WriteConfig.mzTruncationMode = MSDataFile.TruncationMode.Trunc_None;
@@ -265,11 +265,11 @@ namespace MSConvertGUI
                         {
                             case "Absolute":
                                 config.WriteConfig.intTruncationMode = MSDataFile.TruncationMode.Trunc_Absolute;
-                                config.WriteConfig.intPrecision = Double.Parse(commandList[++x]);
+                                config.WriteConfig.intLossyError = Double.Parse(commandList[++x]);
                                 break;
                             case "Relative":
                                 config.WriteConfig.intTruncationMode = MSDataFile.TruncationMode.Trunc_Relative;
-                                config.WriteConfig.intPrecision = Double.Parse(commandList[++x]);
+                                config.WriteConfig.intLossyError = Double.Parse(commandList[++x]);
                                 break;
                             case "None":
                                 config.WriteConfig.intTruncationMode = MSDataFile.TruncationMode.Trunc_None;

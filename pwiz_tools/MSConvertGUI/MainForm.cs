@@ -1483,7 +1483,7 @@ namespace MSConvertGUI
         private void cbIntTruncMode_SelectedIndexChanged(object sender, EventArgs e)
         {
             cbIntLossyError.Items.Clear();
-            switch (cbMzTruncMode.SelectedIndex)
+            switch (cbIntTruncMode.SelectedIndex)
             {
                 case 0: //none
                     cbIntLossyError.Enabled = false;

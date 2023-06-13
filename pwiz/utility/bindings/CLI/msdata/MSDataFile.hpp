@@ -67,13 +67,13 @@ public ref class MSDataFile : public MSData
     /// supported data formats for write()
     /// </summary>
     enum class Format {Format_Text, Format_mzML, Format_mzXML, Format_MGF, Format_MS1, Format_CMS1, Format_MS2, Format_CMS2, Format_MZ5};
-    enum class TruncationMode {Trunc_None, Trunc_Absolute, Trunc_Relative};
-
+    
     enum class Precision {Precision_32, Precision_64};
     enum class ByteOrder {ByteOrder_LittleEndian, ByteOrder_BigEndian};
     enum class Compression {Compression_None, Compression_Zlib};
     enum class Numpress {Numpress_None, Numpress_Linear, Numpress_Pic, Numpress_Slof}; // lossy numerical representations
-
+    enum class TruncationMode {Trunc_None, Trunc_Absolute, Trunc_Relative};
+    
     /// <summary>
     /// configuration options for write()
     /// </summary>
@@ -95,8 +95,8 @@ public ref class MSDataFile : public MSData
         property bool useWorkerThreads;
         property TruncationMode mzTruncationMode;
         property TruncationMode intTruncationMode;
-        property double mzPrecision;
-        property double intPrecision;
+        property double mzLossyError;
+        property double intLossyError;
         
         /// <summary>
         /// when true, if an error is seen when enumerating a spectrum or chromatogram, it will be skipped and enumeration will continue;
@@ -118,8 +118,8 @@ public ref class MSDataFile : public MSData
             continueOnError = false;
             mzTruncationMode = TruncationMode::Trunc_None;
             intTruncationMode = TruncationMode::Trunc_None;
-            mzPrecision = 0;
-            intPrecision = 0;
+            mzLossyError = 0.0;
+            intLossyError = 0.0;
         }
     };
 

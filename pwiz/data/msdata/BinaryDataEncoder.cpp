@@ -136,9 +136,13 @@ void BinaryDataEncoder::Impl::encode(const double* data, size_t dataSize, std::s
     vector<unsigned char> numpressed;
     vector<T32> data32;
     vector<T> data64endianized;
-    double mzPrecision = config_.mzPrecision;
-    double intPrecision = config_.intPrecision;
-    double* truncData = new double[dataSize]; // 创建新数组 
+    double mzLossyError = config_.mzLossyError;
+    double intLossyError = config_.intLossyError;
+    double* truncData = new double[dataSize]; // 创建新数组
+    for (int i = 0; i < dataSize; i++)
+    {
+        truncData[i] = data[i];
+    }
     switch (config_.mzTruncationMode)
     {
         case Trunc_None:
@@ -146,14 +150,18 @@ void BinaryDataEncoder::Impl::encode(const double* data, size_t dataSize, std::s
         case Trunc_Absolute:
             for (int i = 0; i < dataSize; i++)
             {
-                truncData[i] = std::round(data[i] * mzPrecision) / mzPrecision; 
+                truncData[i] = std::round(data[i] / mzLossyError) * mzLossyError;
+                i++;
             }
+            data = truncData;
             break;
         case Trunc_Relative:
             for (int i = 0; i < dataSize; i++)
             {
-                truncData[i] = relativeError(data[i], mzPrecision);
+                truncData[i] = relativeError(data[i], mzLossyError);
+                i++;
             }
+            data = truncData;
             break;
         default:
             break;
@@ -164,16 +172,20 @@ void BinaryDataEncoder::Impl::encode(const double* data, size_t dataSize, std::s
         case Trunc_None:
             break;
         case Trunc_Absolute:
-            for (int i = 0; i < dataSize; i++)
+            for (int i = 1; i < dataSize; i++)
             {
-                truncData[i] = std::round(data[i] * intPrecision) / intPrecision; 
+                truncData[i] = std::round(data[i] / intLossyError) * intLossyError;
+                i++;
             }
+            data = truncData;
             break;
         case Trunc_Relative:
-            for (int i = 0; i < dataSize; i++)
+            for (int i = 1; i < dataSize; i++)
             {
-                truncData[i] = relativeError(data[i], intPrecision);
+                truncData[i] = relativeError(data[i], intLossyError);
+                i++;
             }
+            data = truncData;
             break;
         default:
             break;

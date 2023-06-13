@@ -61,8 +61,8 @@ class PWIZ_API_DECL BinaryDataEncoder
         Numpress numpress; // lossy numerical compression
         TruncationMode mzTruncationMode;
         TruncationMode intTruncationMode;
-        double mzPrecision;
-        double intPrecision;
+        double mzLossyError;
+        double intLossyError;
         
         double numpressFixedPoint;  // for Numpress_* use, 0=derive best value
         double numpressLinearErrorTolerance;  // guarantee abs(1.0-(encoded/decoded)) <= this, 0=do not guarantee anything
@@ -82,7 +82,9 @@ class PWIZ_API_DECL BinaryDataEncoder
             numpressSlofErrorTolerance(BinaryDataEncoder_default_numpressSlofErrorTolerance),
             numpressLinearAbsMassAcc(-1.0),
             mzTruncationMode(Trunc_None),
-            intTruncationMode(Trunc_None)
+            intTruncationMode(Trunc_None),
+            mzLossyError(0.0),
+            intLossyError(0.0)
         {}
     };
 
