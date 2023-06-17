@@ -1625,8 +1625,20 @@ void writeBinaryDataArray(minimxml::XMLWriter& writer, const BinaryDataArrayType
     if (n_overrideItr != config.numpressOverrides.end())
         usedConfig.numpress = n_overrideItr->second;
 
-    BinaryDataEncoder encoder(usedConfig);
+    
     string encoded;
+    if (binaryDataArray.hasCVParam(MS_m_z_array))
+    {
+        usedConfig.currentDataType = BinaryDataEncoder::BinaryDataType::Type_MZ;
+    }
+    else if(binaryDataArray.hasCVParam(MS_intensity_array))
+    {
+        usedConfig.currentDataType = BinaryDataEncoder::BinaryDataType::Type_Intensity;
+    }else
+    {
+        usedConfig.currentDataType = BinaryDataEncoder::BinaryDataType::Type_Other;
+    }
+    BinaryDataEncoder encoder(usedConfig);
     encoder.encode(binaryDataArray.data, encoded);
     usedConfig = encoder.getConfig(); // config may have changed if numpress error was excessive
 

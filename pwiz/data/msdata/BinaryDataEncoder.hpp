@@ -51,6 +51,7 @@ class PWIZ_API_DECL BinaryDataEncoder
     enum Compression {Compression_None, Compression_Zlib};
     enum Numpress {Numpress_None, Numpress_Linear, Numpress_Pic, Numpress_Slof}; // lossy numerical representations
     enum TruncationMode {Trunc_None, Trunc_Absolute, Trunc_Relative};
+    enum BinaryDataType {Type_MZ, Type_Intensity, Type_Other};
     
     /// encoding/decoding configuration 
     struct PWIZ_API_DECL Config
@@ -59,6 +60,7 @@ class PWIZ_API_DECL BinaryDataEncoder
         ByteOrder byteOrder;
         Compression compression;  // zlib or none
         Numpress numpress; // lossy numerical compression
+        BinaryDataType currentDataType;
         TruncationMode mzTruncationMode;
         TruncationMode intTruncationMode;
         double mzLossyError;
@@ -83,6 +85,7 @@ class PWIZ_API_DECL BinaryDataEncoder
             numpressLinearAbsMassAcc(-1.0),
             mzTruncationMode(Trunc_None),
             intTruncationMode(Trunc_None),
+            currentDataType(Type_Other),
             mzLossyError(0.0),
             intLossyError(0.0)
         {}
