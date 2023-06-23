@@ -1634,7 +1634,8 @@ void writeBinaryDataArray(minimxml::XMLWriter& writer, const BinaryDataArrayType
     else if(binaryDataArray.hasCVParam(MS_intensity_array))
     {
         usedConfig.currentDataType = BinaryDataEncoder::BinaryDataType::Type_Intensity;
-    }else
+    }
+    else
     {
         usedConfig.currentDataType = BinaryDataEncoder::BinaryDataType::Type_Other;
     }

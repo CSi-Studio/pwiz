@@ -839,31 +839,37 @@ namespace pwiz
                 throw runtime_error("[BinaryDataEncoder::writeConfig] Unknown binary numeric compression");
             }
 
-            // switch (config.mzTruncationMode)
-            // {
-            //     case BinaryDataEncoder::Trunc_None:
-            //         os << "mzTruncationMode-None";
-            //         break;
-            //     case BinaryDataEncoder::Trunc_Absolute:
-            //         os << "mzTruncationMode-Absolute";
-            //         break;
-            //     case BinaryDataEncoder::Trunc_Relative:
-            //         os << "mzTruncationMode-Relative";
-            //         break;
-            // }
-            //
-            // switch (config.intTruncationMode)
-            // {
-            // case BinaryDataEncoder::Trunc_None:
-            //     os << "intTruncationMode-None";
-            //     break;
-            // case BinaryDataEncoder::Trunc_Absolute:
-            //     os << "intTruncationMode-Absolute";
-            //     break;
-            // case BinaryDataEncoder::Trunc_Relative:
-            //     os << "intTruncationMode-Relative";
-            //     break;
-            // }
+            switch (config.mzTruncationMode)
+            {
+                case BinaryDataEncoder::Trunc_None:
+                    os << "mzTruncationMode-None";
+                    break;
+                case BinaryDataEncoder::Trunc_Absolute:
+                    os << "mzTruncationMode-Absolute";
+                    break;
+                case BinaryDataEncoder::Trunc_Relative:
+                    os << "mzTruncationMode-Relative";
+                    break;
+                default:
+                    throw runtime_error("[BinaryDataEncoder::writeConfig] Unknown mz truncation mode");
+                    break;
+            }
+            
+            switch (config.intTruncationMode)
+            {
+                case BinaryDataEncoder::Trunc_None:
+                    os << "intTruncationMode-None";
+                    break;
+                case BinaryDataEncoder::Trunc_Absolute:
+                    os << "intTruncationMode-Absolute";
+                    break;
+                case BinaryDataEncoder::Trunc_Relative:
+                    os << "intTruncationMode-Relative";
+                    break;
+                default:
+                    throw runtime_error("[BinaryDataEncoder::writeConfig] Unknown mz truncation mode");
+                    break;
+            }
 
             pOverrideItr = config.precisionOverrides.find(cvid);
             if (pOverrideItr != config.precisionOverrides.end())
@@ -884,6 +890,13 @@ namespace pwiz
 
         PWIZ_API_DECL double BinaryDataEncoder::Impl::relativeError(double origin, double lossy_error)
         {
+            if(!std::isfinite(origin) || origin < 0.0){
+                //We can not guarantee that this will not overlap with a value from a transform, throw an error for now.
+                throw std::out_of_range("value out of range");
+            }
+            if(origin == 0.0){
+                return origin;
+            }
             uint64_t val;
             memcpy(&val, &origin, sizeof(double));
             int bits_to_trunc = 52 + ilogb(lossy_error) + 1;
