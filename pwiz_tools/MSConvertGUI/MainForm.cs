@@ -807,6 +807,8 @@ namespace MSConvertGUI
             if (SrmSpectraBox.Checked)
                 commandLine.Append("--srmAsSpectra|");
 
+          
+            
             foreach (DataGridViewRow row in FilterDGV.Rows)
                 if (row.Cells[0].Value.Equals("ddaProcessing"))
                     commandLine.Append("--ddaProcessing|");
@@ -820,8 +822,10 @@ namespace MSConvertGUI
                     commandLine.Append(tppline);
             }
 
-            commandLine.Append("--mzTrunc|" + cbMzTruncMode.SelectedItem + "|" + cbMzLossError.SelectedItem + "|");
-            commandLine.Append("--intTrunc|" + cbIntTruncMode.SelectedItem + "|" + cbIntLossyError.SelectedItem + "|");
+            commandLine.Append("--mzTrunc|" + cbMzTruncMode.SelectedItem + "|" +
+                               (cbMzLossError.SelectedItem == null ? 0.0 : cbMzLossError.SelectedItem) + "|");
+            commandLine.Append("--intTrunc|" + cbIntTruncMode.SelectedItem + "|" +
+                               (cbIntLossyError.SelectedItem == null ? 0.0 : cbIntLossyError.SelectedItem) + "|");
 
             return commandLine.ToString();
         }

@@ -253,8 +253,10 @@ namespace MSConvertGUI
                                 break;
                             case "None":
                                 config.WriteConfig.mzTruncationMode = MSDataFile.TruncationMode.Trunc_None;
+                                ++x;
                                 break;
                             default:
+                                ++x;
                                 config.WriteConfig.mzTruncationMode = MSDataFile.TruncationMode.Trunc_None;
                                 break;
                         }
@@ -273,9 +275,11 @@ namespace MSConvertGUI
                                 break;
                             case "None":
                                 config.WriteConfig.intTruncationMode = MSDataFile.TruncationMode.Trunc_None;
+                                ++x;
                                 break;
                             default:
                                 config.WriteConfig.intTruncationMode = MSDataFile.TruncationMode.Trunc_None;
+                                ++x;
                                 break;
                         }
                         
@@ -284,8 +288,6 @@ namespace MSConvertGUI
                         config.Filenames.Add(commandList[x]);
                         break;
                 }
-
-
             }
 
             #region Parse config file if required
