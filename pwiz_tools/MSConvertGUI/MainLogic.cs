@@ -240,6 +240,9 @@ namespace MSConvertGUI
                     case "--ddaProcessing":
                         config.ReaderConfig.ddaProcessing = true;
                         break;
+                    case "--noBinaryData":
+                        config.WriteConfig.noBinaryData = true;
+                        break;
                     case "--mzTrunc":
                         switch (commandList[++x])
                         {

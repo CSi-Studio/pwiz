@@ -806,8 +806,9 @@ namespace MSConvertGUI
 
             if (SrmSpectraBox.Checked)
                 commandLine.Append("--srmAsSpectra|");
-
-          
+            
+            if (!cbWriteBinaryData.Checked)
+                commandLine.Append("--noBinaryData|");
             
             foreach (DataGridViewRow row in FilterDGV.Rows)
                 if (row.Cells[0].Value.Equals("ddaProcessing"))
@@ -887,6 +888,9 @@ namespace MSConvertGUI
                     case "--simAsSpectra":
                     case "--srmAsSpectra":
                         break; // already handled these booleans above
+                    case "--noBinaryData":
+                        cbWriteBinaryData.Checked = false;
+                        break;
                     case "--mzTrunc":
                         cbMzTruncMode.SelectedItem = words[++i];
                         cbMzLossError.SelectedItem = words[++i];

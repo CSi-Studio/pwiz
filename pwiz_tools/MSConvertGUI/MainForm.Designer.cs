@@ -222,6 +222,7 @@ namespace MSConvertGUI
             this.cbIntLossyError = new System.Windows.Forms.ComboBox();
             this.cbIntTruncMode = new System.Windows.Forms.ComboBox();
             this.cbMzTruncMode = new System.Windows.Forms.ComboBox();
+            this.cbWriteBinaryData = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.FilterDGV)).BeginInit();
             this.FilterGB.SuspendLayout();
             this.SubsetPanel.SuspendLayout();
@@ -298,7 +299,7 @@ namespace MSConvertGUI
             this.FilterDGV.RowHeadersWidth = 62;
             this.FilterDGV.RowTemplate.Height = 24;
             this.FilterDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.FilterDGV.Size = new System.Drawing.Size(890, 400);
+            this.FilterDGV.Size = new System.Drawing.Size(887, 450);
             this.FilterDGV.TabIndex = 12;
             // 
             // OptionTab
@@ -326,7 +327,7 @@ namespace MSConvertGUI
             this.FileListBox.Margin = new System.Windows.Forms.Padding(5);
             this.FileListBox.Name = "FileListBox";
             this.FileListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.FileListBox.Size = new System.Drawing.Size(499, 284);
+            this.FileListBox.Size = new System.Drawing.Size(499, 264);
             this.FileListBox.TabIndex = 7;
             this.FileListBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FileListBox_KeyUp);
             // 
@@ -345,7 +346,7 @@ namespace MSConvertGUI
             // StartButton
             // 
             this.StartButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.StartButton.Location = new System.Drawing.Point(1328, 952);
+            this.StartButton.Location = new System.Drawing.Point(1328, 1002);
             this.StartButton.Margin = new System.Windows.Forms.Padding(5);
             this.StartButton.Name = "StartButton";
             this.StartButton.Size = new System.Drawing.Size(125, 35);
@@ -372,7 +373,7 @@ namespace MSConvertGUI
             this.FilterGB.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
             this.FilterGB.Name = "FilterGB";
             this.FilterGB.Padding = new System.Windows.Forms.Padding(5);
-            this.FilterGB.Size = new System.Drawing.Size(890, 351);
+            this.FilterGB.Size = new System.Drawing.Size(887, 351);
             this.FilterGB.TabIndex = 9;
             this.FilterGB.TabStop = false;
             this.FilterGB.Text = "Filters";
@@ -422,7 +423,7 @@ namespace MSConvertGUI
             this.SubsetPanel.Location = new System.Drawing.Point(37, 71);
             this.SubsetPanel.Margin = new System.Windows.Forms.Padding(5);
             this.SubsetPanel.Name = "SubsetPanel";
-            this.SubsetPanel.Size = new System.Drawing.Size(818, 223);
+            this.SubsetPanel.Size = new System.Drawing.Size(815, 223);
             this.SubsetPanel.TabIndex = 6;
             this.SubsetPanel.Visible = false;
             // 
@@ -1562,7 +1563,7 @@ namespace MSConvertGUI
             // RemoveFilterButton
             // 
             this.RemoveFilterButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.RemoveFilterButton.Location = new System.Drawing.Point(452, 360);
+            this.RemoveFilterButton.Location = new System.Drawing.Point(451, 360);
             this.RemoveFilterButton.Margin = new System.Windows.Forms.Padding(5);
             this.RemoveFilterButton.Name = "RemoveFilterButton";
             this.RemoveFilterButton.Size = new System.Drawing.Size(97, 35);
@@ -1574,7 +1575,7 @@ namespace MSConvertGUI
             // AddFilterButton
             // 
             this.AddFilterButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.AddFilterButton.Location = new System.Drawing.Point(354, 360);
+            this.AddFilterButton.Location = new System.Drawing.Point(353, 360);
             this.AddFilterButton.Margin = new System.Windows.Forms.Padding(5);
             this.AddFilterButton.Name = "AddFilterButton";
             this.AddFilterButton.Size = new System.Drawing.Size(88, 35);
@@ -1645,7 +1646,7 @@ namespace MSConvertGUI
             // OutputBrowse
             // 
             this.OutputBrowse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.OutputBrowse.Location = new System.Drawing.Point(392, 317);
+            this.OutputBrowse.Location = new System.Drawing.Point(389, 298);
             this.OutputBrowse.Margin = new System.Windows.Forms.Padding(5);
             this.OutputBrowse.Name = "OutputBrowse";
             this.OutputBrowse.Size = new System.Drawing.Size(110, 35);
@@ -1658,7 +1659,7 @@ namespace MSConvertGUI
             // 
             this.OutputLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.OutputLabel.AutoSize = true;
-            this.OutputLabel.Location = new System.Drawing.Point(0, 295);
+            this.OutputLabel.Location = new System.Drawing.Point(-3, 276);
             this.OutputLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.OutputLabel.Name = "OutputLabel";
             this.OutputLabel.Size = new System.Drawing.Size(138, 20);
@@ -1670,7 +1671,7 @@ namespace MSConvertGUI
             this.OutputBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
             this.OutputBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.OutputBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystemDirectories;
-            this.OutputBox.Location = new System.Drawing.Point(2, 320);
+            this.OutputBox.Location = new System.Drawing.Point(-1, 301);
             this.OutputBox.Margin = new System.Windows.Forms.Padding(5);
             this.OutputBox.Name = "OutputBox";
             this.OutputBox.Size = new System.Drawing.Size(373, 26);
@@ -1887,7 +1888,7 @@ namespace MSConvertGUI
             // PresetSaveButton
             // 
             this.PresetSaveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.PresetSaveButton.Location = new System.Drawing.Point(537, 952);
+            this.PresetSaveButton.Location = new System.Drawing.Point(537, 1002);
             this.PresetSaveButton.Margin = new System.Windows.Forms.Padding(5);
             this.PresetSaveButton.Menu = this.presetSaveButtonMenu;
             this.PresetSaveButton.Name = "PresetSaveButton";
@@ -1964,7 +1965,7 @@ namespace MSConvertGUI
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(20, 960);
+            this.label3.Location = new System.Drawing.Point(20, 1010);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(72, 20);
@@ -1978,7 +1979,7 @@ namespace MSConvertGUI
             this.presetComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.presetComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.presetComboBox.FormattingEnabled = true;
-            this.presetComboBox.Location = new System.Drawing.Point(97, 952);
+            this.presetComboBox.Location = new System.Drawing.Point(97, 1002);
             this.presetComboBox.Margin = new System.Windows.Forms.Padding(5);
             this.presetComboBox.Name = "presetComboBox";
             this.presetComboBox.Size = new System.Drawing.Size(409, 28);
@@ -1989,7 +1990,7 @@ namespace MSConvertGUI
             // 
             this.filesToConvertInParallelLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.filesToConvertInParallelLabel.AutoSize = true;
-            this.filesToConvertInParallelLabel.Location = new System.Drawing.Point(998, 965);
+            this.filesToConvertInParallelLabel.Location = new System.Drawing.Point(998, 1015);
             this.filesToConvertInParallelLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.filesToConvertInParallelLabel.Name = "filesToConvertInParallelLabel";
             this.filesToConvertInParallelLabel.Size = new System.Drawing.Size(206, 20);
@@ -2003,7 +2004,7 @@ namespace MSConvertGUI
             settings1.NumFilesToConvertInParallel = new decimal(new int[] { 1, 0, 0, 0 });
             settings1.SettingsKey = "";
             this.FilesToConvertInParallelUpDown.DataBindings.Add(new System.Windows.Forms.Binding("Value", settings1, "NumFilesToConvertInParallel", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.FilesToConvertInParallelUpDown.Location = new System.Drawing.Point(1245, 957);
+            this.FilesToConvertInParallelUpDown.Location = new System.Drawing.Point(1245, 1007);
             this.FilesToConvertInParallelUpDown.Margin = new System.Windows.Forms.Padding(5);
             this.FilesToConvertInParallelUpDown.Maximum = new decimal(new int[] { 64, 0, 0, 0 });
             this.FilesToConvertInParallelUpDown.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
@@ -2016,7 +2017,7 @@ namespace MSConvertGUI
             // showCommandLine
             // 
             this.showCommandLine.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.showCommandLine.Location = new System.Drawing.Point(697, 952);
+            this.showCommandLine.Location = new System.Drawing.Point(697, 1002);
             this.showCommandLine.Margin = new System.Windows.Forms.Padding(5);
             this.showCommandLine.Name = "showCommandLine";
             this.showCommandLine.Size = new System.Drawing.Size(205, 35);
@@ -2035,7 +2036,6 @@ namespace MSConvertGUI
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.Controls.Add(this.OutputBrowse);
-            this.splitContainer1.Panel1.Controls.Add(this.OptionsGB);
             this.splitContainer1.Panel1.Controls.Add(this.FileListBox);
             this.splitContainer1.Panel1.Controls.Add(this.OutputLabel);
             this.splitContainer1.Panel1.Controls.Add(this.OutputBox);
@@ -2047,7 +2047,7 @@ namespace MSConvertGUI
             this.splitContainer1.Panel2.Controls.Add(this.FilterGB);
             this.splitContainer1.Panel2.Controls.Add(this.AddFilterButton);
             this.splitContainer1.Panel2.Controls.Add(this.RemoveFilterButton);
-            this.splitContainer1.Size = new System.Drawing.Size(1433, 805);
+            this.splitContainer1.Size = new System.Drawing.Size(1433, 855);
             this.splitContainer1.SplitterDistance = 504;
             this.splitContainer1.SplitterWidth = 7;
             this.splitContainer1.TabIndex = 38;
@@ -2056,12 +2056,12 @@ namespace MSConvertGUI
             // 
             this.OptionsGB.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
             this.OptionsGB.Controls.Add(this.OptionsTableLayoutPanel);
-            this.OptionsGB.Location = new System.Drawing.Point(2, 362);
+            this.OptionsGB.Location = new System.Drawing.Point(17, 481);
             this.OptionsGB.Margin = new System.Windows.Forms.Padding(5);
             this.OptionsGB.MinimumSize = new System.Drawing.Size(513, 366);
             this.OptionsGB.Name = "OptionsGB";
             this.OptionsGB.Padding = new System.Windows.Forms.Padding(5);
-            this.OptionsGB.Size = new System.Drawing.Size(513, 443);
+            this.OptionsGB.Size = new System.Drawing.Size(513, 460);
             this.OptionsGB.TabIndex = 8;
             this.OptionsGB.TabStop = false;
             this.OptionsGB.Text = "Options";
@@ -2099,6 +2099,7 @@ namespace MSConvertGUI
             this.OptionsTableLayoutPanel.Controls.Add(this.cbIntLossyError, 3, 12);
             this.OptionsTableLayoutPanel.Controls.Add(this.cbIntTruncMode, 1, 12);
             this.OptionsTableLayoutPanel.Controls.Add(this.cbMzTruncMode, 1, 11);
+            this.OptionsTableLayoutPanel.Controls.Add(this.cbWriteBinaryData, 2, 13);
             this.OptionsTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.OptionsTableLayoutPanel.Location = new System.Drawing.Point(5, 24);
             this.OptionsTableLayoutPanel.Margin = new System.Windows.Forms.Padding(5, 5, 0, 0);
@@ -2118,7 +2119,7 @@ namespace MSConvertGUI
             this.OptionsTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
             this.OptionsTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
             this.OptionsTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
-            this.OptionsTableLayoutPanel.Size = new System.Drawing.Size(503, 414);
+            this.OptionsTableLayoutPanel.Size = new System.Drawing.Size(503, 431);
             this.OptionsTableLayoutPanel.TabIndex = 8;
             // 
             // label14
@@ -2167,7 +2168,7 @@ namespace MSConvertGUI
             this.cbMzLossError.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMzLossError.Enabled = false;
             this.cbMzLossError.FormattingEnabled = true;
-            this.cbMzLossError.Location = new System.Drawing.Point(390, 316);
+            this.cbMzLossError.Location = new System.Drawing.Point(390, 317);
             this.cbMzLossError.Margin = new System.Windows.Forms.Padding(5);
             this.cbMzLossError.Name = "cbMzLossError";
             this.cbMzLossError.Size = new System.Drawing.Size(89, 28);
@@ -2179,7 +2180,7 @@ namespace MSConvertGUI
             this.cbIntLossyError.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbIntLossyError.Enabled = false;
             this.cbIntLossyError.FormattingEnabled = true;
-            this.cbIntLossyError.Location = new System.Drawing.Point(390, 356);
+            this.cbIntLossyError.Location = new System.Drawing.Point(390, 357);
             this.cbIntLossyError.Margin = new System.Windows.Forms.Padding(5);
             this.cbIntLossyError.Name = "cbIntLossyError";
             this.cbIntLossyError.Size = new System.Drawing.Size(89, 28);
@@ -2191,7 +2192,7 @@ namespace MSConvertGUI
             this.cbIntTruncMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbIntTruncMode.FormattingEnabled = true;
             this.cbIntTruncMode.Items.AddRange(new object[] { "None", "Relative" });
-            this.cbIntTruncMode.Location = new System.Drawing.Point(180, 357);
+            this.cbIntTruncMode.Location = new System.Drawing.Point(180, 356);
             this.cbIntTruncMode.Margin = new System.Windows.Forms.Padding(5);
             this.cbIntTruncMode.Name = "cbIntTruncMode";
             this.cbIntTruncMode.Size = new System.Drawing.Size(89, 28);
@@ -2204,18 +2205,35 @@ namespace MSConvertGUI
             this.cbMzTruncMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMzTruncMode.FormattingEnabled = true;
             this.cbMzTruncMode.Items.AddRange(new object[] { "None", "Absolute" });
-            this.cbMzTruncMode.Location = new System.Drawing.Point(180, 317);
+            this.cbMzTruncMode.Location = new System.Drawing.Point(180, 316);
             this.cbMzTruncMode.Margin = new System.Windows.Forms.Padding(5);
             this.cbMzTruncMode.Name = "cbMzTruncMode";
             this.cbMzTruncMode.Size = new System.Drawing.Size(89, 28);
             this.cbMzTruncMode.TabIndex = 13;
             this.cbMzTruncMode.SelectedIndexChanged += new System.EventHandler(this.cbMzTruncMode_SelectedIndexChanged);
             // 
+            // cbWriteBinaryData
+            // 
+            this.cbWriteBinaryData.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.cbWriteBinaryData.AutoSize = true;
+            this.cbWriteBinaryData.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.cbWriteBinaryData.Checked = true;
+            this.cbWriteBinaryData.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.OptionsTableLayoutPanel.SetColumnSpan(this.cbWriteBinaryData, 2);
+            this.cbWriteBinaryData.Location = new System.Drawing.Point(307, 398);
+            this.cbWriteBinaryData.Margin = new System.Windows.Forms.Padding(5);
+            this.cbWriteBinaryData.Name = "cbWriteBinaryData";
+            this.cbWriteBinaryData.Size = new System.Drawing.Size(174, 24);
+            this.cbWriteBinaryData.TabIndex = 36;
+            this.cbWriteBinaryData.Text = "Write Binary Data:";
+            this.cbWriteBinaryData.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1473, 1006);
+            this.ClientSize = new System.Drawing.Size(1473, 1056);
+            this.Controls.Add(this.OptionsGB);
             this.Controls.Add(this.showCommandLine);
             this.Controls.Add(this.filesToConvertInParallelLabel);
             this.Controls.Add(this.FilesToConvertInParallelUpDown);
@@ -2278,6 +2296,8 @@ namespace MSConvertGUI
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.CheckBox cbWriteBinaryData;
 
         #endregion
 
