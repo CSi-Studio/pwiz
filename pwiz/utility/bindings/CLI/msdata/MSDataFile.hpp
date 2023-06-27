@@ -93,6 +93,7 @@ public ref class MSDataFile : public MSData
         property bool indexed;
         property bool gzipped;
         property bool useWorkerThreads;
+        property bool noBinaryData;
         property TruncationMode mzTruncationMode;
         property TruncationMode intTruncationMode;
         property double mzLossyError;
@@ -116,6 +117,7 @@ public ref class MSDataFile : public MSData
 			indexed = true;
             useWorkerThreads = true;
             continueOnError = false;
+            noBinaryData = false;
             mzTruncationMode = TruncationMode::Trunc_None;
             intTruncationMode = TruncationMode::Trunc_None;
             mzLossyError = 0.0;

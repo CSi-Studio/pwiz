@@ -1640,7 +1640,10 @@ void writeBinaryDataArray(minimxml::XMLWriter& writer, const BinaryDataArrayType
         usedConfig.currentDataType = BinaryDataEncoder::BinaryDataType::Type_Other;
     }
     BinaryDataEncoder encoder(usedConfig);
-    encoder.encode(binaryDataArray.data, encoded);
+    if (!usedConfig.noBinaryData)
+    {
+        encoder.encode(binaryDataArray.data, encoded);
+    }
     usedConfig = encoder.getConfig(); // config may have changed if numpress error was excessive
 
     XMLWriter::Attributes attributes;

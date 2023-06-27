@@ -65,7 +65,7 @@ class PWIZ_API_DECL BinaryDataEncoder
         TruncationMode intTruncationMode;
         double mzLossyError;
         double intLossyError;
-        
+        bool noBinaryData;
         double numpressFixedPoint;  // for Numpress_* use, 0=derive best value
         double numpressLinearErrorTolerance;  // guarantee abs(1.0-(encoded/decoded)) <= this, 0=do not guarantee anything
         double numpressSlofErrorTolerance;  // guarantee abs(1.0-(encoded/decoded)) <= this, 0=do not guarantee anything
@@ -87,7 +87,8 @@ class PWIZ_API_DECL BinaryDataEncoder
             intTruncationMode(Trunc_None),
             currentDataType(Type_Other),
             mzLossyError(0.0),
-            intLossyError(0.0)
+            intLossyError(0.0),
+            noBinaryData(false)
         {}
     };
 

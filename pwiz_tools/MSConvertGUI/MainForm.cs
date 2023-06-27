@@ -42,12 +42,12 @@ namespace MSConvertGUI
         IList<string> cmdline_args;
         string SetDefaultsDataType = ""; // watch last-added filetype, offer to set defaults for that type
         string AboutButtonHelpText = "Version: " + Application.ProductVersion + "\r\n\r\n" +
-            "Each control has a \"tooltip\": let your cursor rest atop a control for a moment to see a help message for that control.\r\n\r\n" +
-            "For more in depth help, visit http://proteowizard.sourceforge.net/tools.shtml .  " +
-            "The documentation there describing the command line version of msconvert will be useful for understanding this " +
-            "program, especially filters.\r\n\r\nActually, you will generally find the command line version to be more current, complete and " +
-            "flexible than this GUI version and may wish to treat this program as a learning tool for using the command line " +
-            "version.\r\n\r\nTo repeat: IF YOU DO NOT SEE A NEEDED OPTION OR FILTER HERE, TRY USING THE COMMAND LINE VERSION (\"MSCONVERT.EXE\") INSTEAD.\r\n\r\nHere are the various tooltips in a more long lasting form:";
+                                     "Each control has a \"tooltip\": let your cursor rest atop a control for a moment to see a help message for that control.\r\n\r\n" +
+                                     "For more in depth help, visit http://proteowizard.sourceforge.net/tools.shtml .  " +
+                                     "The documentation there describing the command line version of msconvert will be useful for understanding this " +
+                                     "program, especially filters.\r\n\r\nActually, you will generally find the command line version to be more current, complete and " +
+                                     "flexible than this GUI version and may wish to treat this program as a learning tool for using the command line " +
+                                     "version.\r\n\r\nTo repeat: IF YOU DO NOT SEE A NEEDED OPTION OR FILTER HERE, TRY USING THE COMMAND LINE VERSION (\"MSCONVERT.EXE\") INSTEAD.\r\n\r\nHere are the various tooltips in a more long lasting form:";
         System.Collections.SortedList sortedToolTips = new System.Collections.SortedList();
 
         private IList<KeyValuePair<string, string>> thresholdTypes = new KeyValuePair<string, string>[]
@@ -468,29 +468,29 @@ namespace MSConvertGUI
 
             OpenDataSourceDialog browseToFileDialog;
             browseToFileDialog = String.IsNullOrEmpty(FileBox.Text)
-                                     ? new OpenDataSourceDialog(fileList, lastFileboxText)
-                                     : new OpenDataSourceDialog(fileList, FileBox.Text);
+                ? new OpenDataSourceDialog(fileList, lastFileboxText)
+                : new OpenDataSourceDialog(fileList, FileBox.Text);
 
             #region Set up Delegates
             browseToFileDialog.FolderType = x =>
-                                                {
-                                                    try
-                                                    {
-                                                        string type = ReaderList.FullReaderList.identify(x);
-                                                        if (type == String.Empty)
-                                                            return "File Folder";
-                                                        return type;
-                                                    }
-                                                    catch { return String.Empty; }
-                                                };
+            {
+                try
+                {
+                    string type = ReaderList.FullReaderList.identify(x);
+                    if (type == String.Empty)
+                        return "File Folder";
+                    return type;
+                }
+                catch { return String.Empty; }
+            };
             browseToFileDialog.FileType = x =>
-                                              {
-                                                  try
-                                                  {
-                                                      return ReaderList.FullReaderList.identify(x);
-                                                  }
-                                                  catch { return String.Empty; }
-                                              };
+            {
+                try
+                {
+                    return ReaderList.FullReaderList.identify(x);
+                }
+                catch { return String.Empty; }
+            };
             #endregion
 
             if (browseToFileDialog.ShowDialog() == DialogResult.OK)
@@ -556,13 +556,13 @@ namespace MSConvertGUI
                     {
                         PeakPickingMethod method = (PeakPickingMethod)(PeakPickingAlgorithmComboBox.SelectedItem as ListViewItem).Tag;
                         FilterDGV.Rows.Add(new[]
-                                               {
-                                                   "peakPicking",
-                                                   String.Format("{0} {1}msLevel={2}-{3}",
-                                                                 Enum.GetName(typeof(PeakPickingMethod), method).ToLowerInvariant(),
-                                                                 method == PeakPickingMethod.Cwt ? String.Format("snr={0} peakSpace={1} ", PeakMinSnr.Text, PeakMinSpacing.Text) : String.Empty,
-                                                                 PeakMSLevelLow.Text, PeakMSLevelHigh.Text)
-                                               });
+                        {
+                            "peakPicking",
+                            String.Format("{0} {1}msLevel={2}-{3}",
+                                Enum.GetName(typeof(PeakPickingMethod), method).ToLowerInvariant(),
+                                method == PeakPickingMethod.Cwt ? String.Format("snr={0} peakSpace={1} ", PeakMinSnr.Text, PeakMinSpacing.Text) : String.Empty,
+                                PeakMSLevelLow.Text, PeakMSLevelHigh.Text)
+                        });
                     }
                     break;
                 case "Demultiplex":
@@ -582,10 +582,10 @@ namespace MSConvertGUI
                     }
 
                     FilterDGV.Rows.Add(new[]
-                        {
-                            "demultiplex",
-                            demuxArgs
-                        });
+                    {
+                        "demultiplex",
+                        demuxArgs
+                    });
                     break;
                 case "Zero Samples":
                     String args = ZeroSamplesAddMissing.Checked ? "addMissing" : "removeExtra";
@@ -597,10 +597,10 @@ namespace MSConvertGUI
                     else // no mslevels specified means all mslevels
                         args += " 1-";
                     FilterDGV.Rows.Add(new[]
-                                           {
-                                               "zeroSamples",
-                                                args
-                                           });
+                    {
+                        "zeroSamples",
+                        args
+                    });
                     break;
 
                 case "DIA-Umpire":
@@ -616,22 +616,22 @@ namespace MSConvertGUI
                     if (!ETDRemovePrecursorBox.Checked || !ETDRemoveChargeReducedBox.Checked ||
                         !ETDRemoveNeutralLossBox.Checked || !ETDBlanketRemovalBox.Checked)
                         tempObject[1] = String.Format("{0} {1} {2} {3}",
-                                                      ETDRemovePrecursorBox.Checked.ToString().ToLowerInvariant(),
-                                                      ETDRemoveChargeReducedBox.Checked.ToString().ToLowerInvariant(),
-                                                      ETDRemoveNeutralLossBox.Checked.ToString().ToLowerInvariant(),
-                                                      ETDBlanketRemovalBox.Checked.ToString().ToLowerInvariant());
+                            ETDRemovePrecursorBox.Checked.ToString().ToLowerInvariant(),
+                            ETDRemoveChargeReducedBox.Checked.ToString().ToLowerInvariant(),
+                            ETDRemoveNeutralLossBox.Checked.ToString().ToLowerInvariant(),
+                            ETDBlanketRemovalBox.Checked.ToString().ToLowerInvariant());
                     FilterDGV.Rows.Add(tempObject);
                     break;
                 case "Charge State Predictor":
                     if (!String.IsNullOrEmpty(ChaMCMinBox.Text) &&
                         !String.IsNullOrEmpty(ChaMCMaxBox.Text))
                         FilterDGV.Rows.Add(new[]
-                                               {
-                                                   "chargeStatePredictor",
-                                                   String.Format("overrideExistingCharge={0} maxMultipleCharge={1} minMultipleCharge={2} singleChargeFractionTIC={3}",
-                                                                 ChaOverwriteCharge.Checked.ToString().ToLowerInvariant(),
-                                                                 ChaMCMaxBox.Text, ChaMCMinBox.Text, ChaSingleBox.Value)
-                                               });
+                        {
+                            "chargeStatePredictor",
+                            String.Format("overrideExistingCharge={0} maxMultipleCharge={1} minMultipleCharge={2} singleChargeFractionTIC={3}",
+                                ChaOverwriteCharge.Checked.ToString().ToLowerInvariant(),
+                                ChaMCMaxBox.Text, ChaMCMinBox.Text, ChaSingleBox.Value)
+                        });
                     break;
                 case "Subset":
                     string scanTimeLow = null, scanTimeHigh = null;
@@ -666,7 +666,7 @@ namespace MSConvertGUI
                         addOrUpdateFilter("defaultArrayLength", String.Format("{0}-{1}", DefaultArrayLengthLow.Text, DefaultArrayLengthHigh.Text));
                     if (!String.IsNullOrEmpty(CollisionEnergyLow.Text) && !String.IsNullOrEmpty(CollisionEnergyHigh.Text))
                         addOrUpdateFilter("collisionEnergy", String.Format("low={0} high={1} acceptNonCID={2} acceptMissingCE={3}", CollisionEnergyLow.Text, CollisionEnergyHigh.Text,
-                                                                           CollisionEnergyAcceptNonCIDMSnSpectra.Checked, CollisionEnergyAcceptCIDSpectraWithMissingCE.Checked));
+                            CollisionEnergyAcceptNonCIDMSnSpectra.Checked, CollisionEnergyAcceptCIDSpectraWithMissingCE.Checked));
                     if (ActivationTypeBox.Text != "Any")
                         addOrUpdateFilter("activation", ActivationTypeBox.Text);
                     if (AnalyzerTypeBox.Text != "Any")
@@ -741,7 +741,7 @@ namespace MSConvertGUI
         }
 
         private String ConstructCommandline()
-        // if you update this, you probably need to update SetControlsFromCommandline too
+            // if you update this, you probably need to update SetControlsFromCommandline too
         {
             var commandLine = new StringBuilder();
             //Get config settings
@@ -831,7 +831,7 @@ namespace MSConvertGUI
         }
 
         private void SetControlsFromCommandline(string commandLine)
-        // if you update this, you probably need to update ConstructCommandLine too
+            // if you update this, you probably need to update ConstructCommandLine too
         {
             // Get config settings
             Precision32.Checked = (commandLine.IndexOf("--32") >= 0);
@@ -946,13 +946,13 @@ namespace MSConvertGUI
         private void presetSaveAsButton_Click(object sender, EventArgs e)
         {
             using (var textInputPrompt = new TextInputPrompt("Preset Name", false, "")
-            {
-                StartPosition = FormStartPosition.CenterParent,
-                FormBorderStyle = FormBorderStyle.FixedToolWindow,
-                ControlBox = false,
-                ShowIcon = false,
-                ShowInTaskbar = false
-            })
+                   {
+                       StartPosition = FormStartPosition.CenterParent,
+                       FormBorderStyle = FormBorderStyle.FixedToolWindow,
+                       ControlBox = false,
+                       ShowIcon = false,
+                       ShowInTaskbar = false
+                   })
             {
                 if (textInputPrompt.ShowDialog(this) == DialogResult.Cancel)
                     return;
@@ -960,9 +960,9 @@ namespace MSConvertGUI
                 var cfgFileName = MakePresetFilename(textInputPrompt.GetText());
                 if (File.Exists(cfgFileName) &&
                     (MessageBox.Show("Preset \"" + textInputPrompt.GetText() + "\" already exists. Do you want to replace it?",
-                                        "MSConvertGUI",
-                                        MessageBoxButtons.YesNo,
-                                        MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.No))
+                        "MSConvertGUI",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.No))
                 {
                     return;
                 }
@@ -1017,13 +1017,13 @@ namespace MSConvertGUI
             }
 
             string outputFolder = String.IsNullOrEmpty(OutputBox.Text) ? Application.StartupPath
-                                                                       : OutputBox.Text;
+                : OutputBox.Text;
             if (!Directory.Exists(outputFolder))
             {
                 if (MessageBox.Show("The directory \"" + outputFolder + "\" does not exist. Do you want to create it?",
-                                    "Create Directory?",
-                                    MessageBoxButtons.YesNo,
-                                    MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.No)
+                        "Create Directory?",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.No)
                     return;
                 Directory.CreateDirectory(outputFolder);
             }
@@ -1344,12 +1344,12 @@ namespace MSConvertGUI
                 {
                     // If the mouse moves outside the rectangle, start the drag.
                     if (dragBoxFromMouseDown != Rectangle.Empty &&
-                    !dragBoxFromMouseDown.Contains(e.X, e.Y))
+                        !dragBoxFromMouseDown.Contains(e.X, e.Y))
                     {
                         // Proceed with the drag and drop, passing in the list item.                    
                         DragDropEffects dropEffect = dgv.DoDragDrop(
-                              dgv.Rows[rowIndexFromMouseDown],
-                              DragDropEffects.Move);
+                            dgv.Rows[rowIndexFromMouseDown],
+                            DragDropEffects.Move);
                     }
                 }
             };
@@ -1369,10 +1369,10 @@ namespace MSConvertGUI
                     // Create a rectangle using the DragSize, with the mouse position being
                     // at the center of the rectangle.
                     dragBoxFromMouseDown = new Rectangle(
-                                  new Point(
-                                    e.X - (dragSize.Width / 2),
-                                    e.Y - (dragSize.Height / 2)),
-                              dragSize);
+                        new Point(
+                            e.X - (dragSize.Width / 2),
+                            e.Y - (dragSize.Height / 2)),
+                        dragSize);
                 }
                 else
                     // Reset the rectangle if the mouse is not over an item in the ListBox.
@@ -1458,14 +1458,14 @@ namespace MSConvertGUI
                 String.Join(" ", from object item in FileListBox.Items select Quote(item.ToString()));
 
             if (DialogResult.Cancel == MessageBox.Show(
-                $"The equivalent msconvert.exe command-line for the current settings:\r\n\r\n{cmdLine}\r\n\r\nPress OK to copy it to the clipboard.",
-                "Command-line", MessageBoxButtons.OKCancel))
+                    $"The equivalent msconvert.exe command-line for the current settings:\r\n\r\n{cmdLine}\r\n\r\nPress OK to copy it to the clipboard.",
+                    "Command-line", MessageBoxButtons.OKCancel))
                 return;
             Clipboard.SetText(cmdLine);
         }
 
-        string[] absoluteMzErrors = {"0.00001", "0.00002","0.00005","0.0001","0.001" };
-        string[] relativeIntensityErrors = {"0.0002","0.002","0.008","0.02","0.2" };
+        string[] absoluteMzErrors = {"0.00001", "0.00002","0.00005","0.0001","0.001"};
+        string[] relativeIntensityErrors = {"0.0002","0.002","0.008","0.02","0.2"};
         private void cbMzTruncMode_SelectedIndexChanged(object sender, EventArgs e)
         {
             cbMzLossError.Items.Clear();

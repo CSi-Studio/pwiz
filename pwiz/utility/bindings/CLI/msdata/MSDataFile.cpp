@@ -137,6 +137,7 @@ static void translateConfig(MSDataFile::WriteConfig^ config, b::MSDataFile::Writ
     config2.binaryDataEncoderConfig.intTruncationMode = (b::BinaryDataEncoder::TruncationMode) config->intTruncationMode;
     config2.binaryDataEncoderConfig.mzLossyError = config->mzLossyError;
     config2.binaryDataEncoderConfig.intLossyError = config->intLossyError;
+    config2.binaryDataEncoderConfig.noBinaryData = config->noBinaryData;
 }
 
 void MSDataFile::write(MSData^ msd,
