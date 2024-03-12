@@ -1,0 +1,12 @@
+D:\workspace\pwiz\build-nt-x86\obj\x64\Release\MSConvertGUI.csproj.AssemblyReference.cache
+D:\workspace\pwiz\build-nt-x86\obj\x64\Release\Interop.EDAL.dll
+D:\workspace\pwiz\build-nt-x86\obj\x64\Release\Interop.HSREADWRITELib.dll
+D:\workspace\pwiz\build-nt-x86\obj\x64\Release\MSConvertGUI.csproj.ResolveComReference.cache
+D:\workspace\pwiz\build-nt-x86\obj\x64\Release\MSConvertGUI.LoginForm.resources
+D:\workspace\pwiz\build-nt-x86\obj\x64\Release\MSConvertGUI.MainForm.resources
+D:\workspace\pwiz\build-nt-x86\obj\x64\Release\MSConvertGUI.ProgressForm.resources
+D:\workspace\pwiz\build-nt-x86\obj\x64\Release\MSConvertGUI.Properties.Resources.resources
+D:\workspace\pwiz\build-nt-x86\obj\x64\Release\MSConvertGUI.TextInputPrompt.resources
+D:\workspace\pwiz\build-nt-x86\obj\x64\Release\MSConvertGUI.UnifiBrowserForm.resources
+D:\workspace\pwiz\build-nt-x86\obj\x64\Release\MSConvertGUI.csproj.GenerateResource.cache
+D:\workspace\pwiz\build-nt-x86\obj\x64\Release\MSConvertGUI.csproj.CoreCompileInputs.cache

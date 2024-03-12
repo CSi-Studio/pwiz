@@ -1,0 +1,15 @@
+D:\workspace\pwiz\build-nt-x86\msvc-release-x86_64\pwiz.CommonUtil.dll
+D:\workspace\pwiz\build-nt-x86\msvc-release-x86_64\pwiz.CommonUtil.pdb
+D:\workspace\pwiz\build-nt-x86\msvc-release-x86_64\ja\pwiz.CommonUtil.resources.dll
+D:\workspace\pwiz\build-nt-x86\obj\x64\Release\CommonUtil.csproj.AssemblyReference.cache
+D:\workspace\pwiz\build-nt-x86\obj\x64\Release\pwiz.Common.Properties.Resources.resources
+D:\workspace\pwiz\build-nt-x86\obj\x64\Release\pwiz.Common.Properties.Resources.ja.resources
+D:\workspace\pwiz\build-nt-x86\obj\x64\Release\CommonUtil.csproj.GenerateResource.cache
+D:\workspace\pwiz\build-nt-x86\obj\x64\Release\CommonUtil.csproj.CoreCompileInputs.cache
+D:\workspace\pwiz\build-nt-x86\obj\x64\Release\ja\pwiz.CommonUtil.resources.dll
+D:\workspace\pwiz\build-nt-x86\obj\x64\Release\CommonUtil.csproj.CopyComplete
+D:\workspace\pwiz\build-nt-x86\obj\x64\Release\pwiz.CommonUtil.dll
+D:\workspace\pwiz\build-nt-x86\obj\x64\Release\pwiz.CommonUtil.pdb
+D:\workspace\pwiz\build-nt-x86\MSConvertGUI\bin\x64\Release\pwiz.CommonUtil.dll
+D:\workspace\pwiz\build-nt-x86\MSConvertGUI\bin\x64\Release\pwiz.CommonUtil.pdb
+D:\workspace\pwiz\build-nt-x86\MSConvertGUI\bin\x64\Release\ja\pwiz.CommonUtil.resources.dll

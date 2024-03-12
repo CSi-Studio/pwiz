@@ -1,0 +1,14 @@
+D:\workspace\pwiz\build-nt-x86\msvc-release-x86_64\CustomDataSourceDialog.dll.config
+D:\workspace\pwiz\build-nt-x86\msvc-release-x86_64\CustomDataSourceDialog.dll
+D:\workspace\pwiz\build-nt-x86\msvc-release-x86_64\CustomDataSourceDialog.pdb
+D:\workspace\pwiz\build-nt-x86\obj\x64\Release\CustomDataSourceDialog.csproj.AssemblyReference.cache
+D:\workspace\pwiz\build-nt-x86\obj\x64\Release\CustomDataSourceDialog.BreadCrumbControl.resources
+D:\workspace\pwiz\build-nt-x86\obj\x64\Release\CustomDataSourceDialog.OpenDataSourceDialog.resources
+D:\workspace\pwiz\build-nt-x86\obj\x64\Release\CustomDataSourceDialog.Properties.Resources.resources
+D:\workspace\pwiz\build-nt-x86\obj\x64\Release\CustomDataSourceDialog.csproj.GenerateResource.cache
+D:\workspace\pwiz\build-nt-x86\obj\x64\Release\CustomDataSourceDialog.csproj.CoreCompileInputs.cache
+D:\workspace\pwiz\build-nt-x86\obj\x64\Release\CustomDataSourceDialog.dll
+D:\workspace\pwiz\build-nt-x86\obj\x64\Release\CustomDataSourceDialog.pdb
+D:\workspace\pwiz\build-nt-x86\MSConvertGUI\bin\x64\Release\CustomDataSourceDialog.dll.config
+D:\workspace\pwiz\build-nt-x86\MSConvertGUI\bin\x64\Release\CustomDataSourceDialog.dll
+D:\workspace\pwiz\build-nt-x86\MSConvertGUI\bin\x64\Release\CustomDataSourceDialog.pdb
